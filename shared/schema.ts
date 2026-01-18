@@ -5,7 +5,7 @@ import { z } from "zod";
 export const skills = pgTable("skills", {
   id: serial("id").primaryKey(),
   name: text("name").notNull(),
-  category: text("category").notNull(), // frontend, backend, tools
+  category: text("category").notNull(), // frontend, backend, database, tool, language, software_engineering
   proficiency: integer("proficiency").notNull(), // 1-100
 });
 
@@ -18,6 +18,7 @@ export const projects = pgTable("projects", {
   link: text("link"),
   githubLink: text("github_link"),
   type: text("type").default('project'), // project, game, tool
+  liveDemo: text("live_demo"), // Path to internal live demo or external link
 });
 
 export const education = pgTable("education", {

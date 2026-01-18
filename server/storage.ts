@@ -40,101 +40,137 @@ export class DatabaseStorage implements IStorage {
   }
 
   async seedData(): Promise<void> {
-    const existingSkills = await this.getSkills();
-    if (existingSkills.length === 0) {
-      await db.insert(skills).values([
-        { name: "Java", category: "backend", proficiency: 85 },
-        { name: "Python", category: "backend", proficiency: 80 },
-        { name: "JavaScript", category: "frontend", proficiency: 75 },
-        { name: "React", category: "frontend", proficiency: 70 },
-        { name: "Spring Boot", category: "backend", proficiency: 65 },
-        { name: "SQL", category: "backend", proficiency: 80 },
-        { name: "HTML5 & CSS3", category: "frontend", proficiency: 90 },
-        { name: "PHP", category: "backend", proficiency: 70 },
-        { name: "UI/UX Design", category: "tools", proficiency: 85 },
-      ]);
-    }
+    // Clear existing to re-seed with full CV data
+    await db.delete(skills);
+    await db.delete(projects);
+    await db.delete(education);
+    await db.delete(experience);
 
-    const existingEducation = await this.getEducation();
-    if (existingEducation.length === 0) {
-      await db.insert(education).values([
-        {
-          degree: "Bachelor of Software and Information Systems Technology and Engineering",
-          institution: "University of Constantine 2 Abdelhamid Mehri, Algeria",
-          period: "September 2023 – June 2026 (Expected)",
-          description: "Relevant Coursework: Advanced Programming, Software Engineering, Data Structures, Web Development, Database Management, UI/UX Design, Project Management"
-        },
-        {
-          degree: "Baccalaureate in Mathematics",
-          institution: "Scientific Specialty",
-          period: "June 2023",
-          description: ""
-        }
-      ]);
-    }
+    await db.insert(skills).values([
+      // Languages
+      { name: "Java", category: "language", proficiency: 90 },
+      { name: "Python", category: "language", proficiency: 85 },
+      { name: "C/C++", category: "language", proficiency: 80 },
+      { name: "JavaScript", category: "language", proficiency: 85 },
+      { name: "PHP", category: "language", proficiency: 75 },
+      { name: "SQL", category: "language", proficiency: 85 },
+      { name: "Assembly", category: "language", proficiency: 60 },
+      // Web Development
+      { name: "HTML5/CSS3", category: "web", proficiency: 95 },
+      { name: "React", category: "web", proficiency: 80 },
+      { name: "Spring Boot", category: "web", proficiency: 70 },
+      { name: "Responsive Design", category: "web", proficiency: 90 },
+      // Databases
+      { name: "MySQL", category: "database", proficiency: 85 },
+      { name: "MySQL Workbench", category: "database", proficiency: 80 },
+      { name: "Database Design", category: "database", proficiency: 85 },
+      // Software Engineering
+      { name: "UML Diagrams", category: "software_engineering", proficiency: 90 },
+      { name: "SDLC", category: "software_engineering", proficiency: 85 },
+      { name: "Agile Methodologies", category: "software_engineering", proficiency: 85 },
+      { name: "UI/UX Design (Figma, Canva)", category: "software_engineering", proficiency: 80 },
+      // Tools
+      { name: "Git", category: "tool", proficiency: 75 },
+      { name: "MS Project", category: "tool", proficiency: 80 },
+      { name: "Linux", category: "tool", proficiency: 70 }
+    ]);
 
-    const existingExperience = await this.getExperience();
-    if (existingExperience.length === 0) {
-      await db.insert(experience).values([
-        {
-          role: "Founder & Manager",
-          company: "Private Educational Support Center",
-          period: "2023 – Present",
-          description: "Founded and manage an educational support center providing tutoring services for children and adults. Supervise teaching staff and maintain quality educational standards."
-        }
-      ]);
-    }
+    await db.insert(education).values([
+      {
+        degree: "Bachelor of Software and Information Systems Technology and Engineering",
+        institution: "University of Constantine 2 Abdelhamid Mehri, Algeria",
+        period: "September 2023 – June 2026 (Expected)",
+        description: "Currently in final year (Licence 3). Advanced Programming, Software Engineering, Data Structures, Web Development, Database Management, UI/UX Design, Project Management."
+      },
+      {
+        degree: "Baccalaureate in Mathematics",
+        institution: "Scientific Specialty",
+        period: "June 2023",
+        description: ""
+      }
+    ]);
 
-    const existingProjects = await this.getProjects();
-    if (existingProjects.length === 0) {
-      await db.insert(projects).values([
-        {
-          title: "E-Commerce Clothing Store",
-          description: "A fully functional online shopping platform with product catalog, shopping cart, and checkout features.",
-          imageUrl: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80",
-          techStack: ["React", "Software Engineering", "UI/UX Design"],
-          link: "#",
-          githubLink: "#",
-          type: "project"
-        },
-        {
-          title: "JavaFX Desktop App",
-          description: "Developed desktop application using JavaFX with sophisticated graphical user interface and concurrent programming.",
-          imageUrl: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&q=80",
-          techStack: ["Java", "JavaFX", "Design Patterns"],
-          link: "#",
-          githubLink: "#",
-          type: "project"
-        },
-        {
-          title: "Pomodoro Timer",
-          description: "An interactive focus tool to help manage study sessions using the Pomodoro technique.",
-          imageUrl: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&q=80",
-          techStack: ["React", "State Management"],
-          link: "/tools/pomodoro",
-          githubLink: "#",
-          type: "tool"
-        },
-        {
-          title: "To-Do List Manager",
-          description: "Simple yet powerful task manager to stay organized.",
-          imageUrl: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&q=80",
-          techStack: ["React", "LocalStorage"],
-          link: "/tools/todo",
-          githubLink: "#",
-          type: "tool"
-        },
-        {
-          title: "Memory Match Game",
-          description: "A fun and simple game to test your memory skills.",
-          imageUrl: "https://images.unsplash.com/photo-1611996575749-79a3a250f948?w=800&q=80",
-          techStack: ["React", "Game Logic"],
-          link: "/games/memory",
-          githubLink: "#",
-          type: "game"
-        }
-      ]);
-    }
+    await db.insert(experience).values([
+      {
+        role: "Founder & Manager",
+        company: "Private Educational Support Center",
+        period: "2023 – Present",
+        description: "Founded and manage an educational support center providing tutoring services for children and adults. Developed strong leadership, time management, planning, and communication skills."
+      }
+    ]);
+
+    await db.insert(projects).values([
+      {
+        title: "E-Commerce Clothing Store",
+        description: "Full functional online shopping platform with product catalog, cart, and checkout. Applied UI/UX principles and Agile management.",
+        imageUrl: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80",
+        techStack: ["React", "UI/UX", "Agile"],
+        link: "#",
+        githubLink: "#",
+        type: "project",
+        liveDemo: "/projects/clothing-store"
+      },
+      {
+        title: "Desktop Application with Advanced GUI",
+        description: "JavaFX application with sophisticated UI, concurrent programming, and software design patterns.",
+        imageUrl: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&q=80",
+        techStack: ["Java", "JavaFX", "Design Patterns"],
+        link: "#",
+        githubLink: "#",
+        type: "project",
+        liveDemo: "#"
+      },
+      {
+        title: "Tic-Tac-Toe Game",
+        description: "Classic interactive game with a clean, modern interface.",
+        imageUrl: "https://images.unsplash.com/photo-1611996575749-79a3a250f948?w=800&q=80",
+        techStack: ["React", "Game Logic"],
+        link: "#",
+        githubLink: "#",
+        type: "game",
+        liveDemo: "/games/tictactoe"
+      },
+      {
+        title: "Pomodoro Focus Timer",
+        description: "Passionate study tool with focus/break cycles and customizable intervals.",
+        imageUrl: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&q=80",
+        techStack: ["React", "Hooks"],
+        link: "#",
+        githubLink: "#",
+        type: "tool",
+        liveDemo: "/tools/pomodoro"
+      },
+      {
+        title: "Bikini Bottom High Quiz",
+        description: "Fun quiz game inspired by Bikini Bottom, testing your knowledge!",
+        imageUrl: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80",
+        techStack: ["React", "Animations"],
+        link: "#",
+        githubLink: "#",
+        type: "game",
+        liveDemo: "/games/bikini-bottom"
+      },
+      {
+        title: "Modern Calculator",
+        description: "Sleek, responsive calculator with advanced mathematical operations.",
+        imageUrl: "https://images.unsplash.com/photo-1587145820266-a5951ee6f677?w=800&q=80",
+        techStack: ["React", "Math.js"],
+        link: "#",
+        githubLink: "#",
+        type: "tool",
+        liveDemo: "/tools/calculator"
+      },
+      {
+        title: "ToDoList Manager",
+        description: "Professional task management tool with persistence and categories.",
+        imageUrl: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&q=80",
+        techStack: ["React", "LocalStorage"],
+        link: "#",
+        githubLink: "#",
+        type: "tool",
+        liveDemo: "/tools/todo"
+      }
+    ]);
   }
 }
 
