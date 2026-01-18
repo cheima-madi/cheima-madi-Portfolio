@@ -18,7 +18,7 @@ export const projects = pgTable("projects", {
   link: text("link"),
   githubLink: text("github_link"),
   type: text("type").default('project'), // project, game, tool
-  liveDemo: text("live_demo"), // Path to internal live demo or external link
+  liveDemo: text("live_demo"), 
 });
 
 export const education = pgTable("education", {
