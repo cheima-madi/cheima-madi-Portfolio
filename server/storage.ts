@@ -1,15 +1,18 @@
 import { db } from "./db";
 import {
-  skills, projects, contactMessages,
+  skills, projects, contactMessages, education, experience,
   type Skill, type InsertSkill,
   type Project, type InsertProject,
-  type InsertContactMessage, type ContactMessage
+  type InsertContactMessage, type ContactMessage,
+  type Education, type Experience
 } from "@shared/schema";
 import { eq } from "drizzle-orm";
 
 export interface IStorage {
   getSkills(): Promise<Skill[]>;
   getProjects(): Promise<Project[]>;
+  getEducation(): Promise<Education[]>;
+  getExperience(): Promise<Experience[]>;
   createContactMessage(message: InsertContactMessage): Promise<ContactMessage>;
   seedData(): Promise<void>;
 }
@@ -23,6 +26,14 @@ export class DatabaseStorage implements IStorage {
     return await db.select().from(projects);
   }
 
+  async getEducation(): Promise<Education[]> {
+    return await db.select().from(education);
+  }
+
+  async getExperience(): Promise<Experience[]> {
+    return await db.select().from(experience);
+  }
+
   async createContactMessage(message: InsertContactMessage): Promise<ContactMessage> {
     const [newMessage] = await db.insert(contactMessages).values(message).returning();
     return newMessage;
@@ -32,14 +43,45 @@ export class DatabaseStorage implements IStorage {
     const existingSkills = await this.getSkills();
     if (existingSkills.length === 0) {
       await db.insert(skills).values([
-        { name: "React", category: "frontend", proficiency: 90 },
-        { name: "TypeScript", category: "frontend", proficiency: 85 },
-        { name: "Node.js", category: "backend", proficiency: 80 },
-        { name: "PostgreSQL", category: "backend", proficiency: 75 },
-        { name: "Tailwind CSS", category: "frontend", proficiency: 95 },
-        { name: "Python", category: "backend", proficiency: 70 },
-        { name: "Docker", category: "tools", proficiency: 60 },
-        { name: "GraphQL", category: "backend", proficiency: 70 },
+        { name: "Java", category: "backend", proficiency: 85 },
+        { name: "Python", category: "backend", proficiency: 80 },
+        { name: "JavaScript", category: "frontend", proficiency: 75 },
+        { name: "React", category: "frontend", proficiency: 70 },
+        { name: "Spring Boot", category: "backend", proficiency: 65 },
+        { name: "SQL", category: "backend", proficiency: 80 },
+        { name: "HTML5 & CSS3", category: "frontend", proficiency: 90 },
+        { name: "PHP", category: "backend", proficiency: 70 },
+        { name: "UI/UX Design", category: "tools", proficiency: 85 },
+      ]);
+    }
+
+    const existingEducation = await this.getEducation();
+    if (existingEducation.length === 0) {
+      await db.insert(education).values([
+        {
+          degree: "Bachelor of Software and Information Systems Technology and Engineering",
+          institution: "University of Constantine 2 Abdelhamid Mehri, Algeria",
+          period: "September 2023 – June 2026 (Expected)",
+          description: "Relevant Coursework: Advanced Programming, Software Engineering, Data Structures, Web Development, Database Management, UI/UX Design, Project Management"
+        },
+        {
+          degree: "Baccalaureate in Mathematics",
+          institution: "Scientific Specialty",
+          period: "June 2023",
+          description: ""
+        }
+      ]);
+    }
+
+    const existingExperience = await this.getExperience();
+    if (existingExperience.length === 0) {
+      await db.insert(experience).values([
+        {
+          role: "Founder & Manager",
+          company: "Private Educational Support Center",
+          period: "2023 – Present",
+          description: "Founded and manage an educational support center providing tutoring services for children and adults. Supervise teaching staff and maintain quality educational standards."
+        }
       ]);
     }
 
@@ -47,36 +89,49 @@ export class DatabaseStorage implements IStorage {
     if (existingProjects.length === 0) {
       await db.insert(projects).values([
         {
-          title: "E-commerce Platform",
-          description: "A full-stack e-commerce solution with payments and inventory management.",
-          imageUrl: "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&q=80",
-          techStack: ["React", "Node.js", "PostgreSQL", "Stripe"],
-          link: "https://example.com",
-          githubLink: "https://github.com/mimidev/ecommerce"
+          title: "E-Commerce Clothing Store",
+          description: "A fully functional online shopping platform with product catalog, shopping cart, and checkout features.",
+          imageUrl: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80",
+          techStack: ["React", "Software Engineering", "UI/UX Design"],
+          link: "#",
+          githubLink: "#",
+          type: "project"
         },
         {
-          title: "Task Management App",
-          description: "Real-time task collaboration tool with drag-and-drop interface.",
-          imageUrl: "https://images.unsplash.com/photo-1540350394557-8d14678e7f91?w=800&q=80",
-          techStack: ["React", "Firebase", "Tailwind CSS"],
-          link: "https://example.com",
-          githubLink: "https://github.com/mimidev/taskapp"
+          title: "JavaFX Desktop App",
+          description: "Developed desktop application using JavaFX with sophisticated graphical user interface and concurrent programming.",
+          imageUrl: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&q=80",
+          techStack: ["Java", "JavaFX", "Design Patterns"],
+          link: "#",
+          githubLink: "#",
+          type: "project"
         },
         {
-          title: "Social Media Dashboard",
-          description: "Analytics dashboard for tracking social media performance.",
-          imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
-          techStack: ["Vue.js", "D3.js", "Express"],
-          link: "https://example.com",
-          githubLink: "https://github.com/mimidev/dashboard"
+          title: "Pomodoro Timer",
+          description: "An interactive focus tool to help manage study sessions using the Pomodoro technique.",
+          imageUrl: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&q=80",
+          techStack: ["React", "State Management"],
+          link: "/tools/pomodoro",
+          githubLink: "#",
+          type: "tool"
         },
         {
-          title: "AI Chatbot",
-          description: "Customer support chatbot powered by OpenAI.",
-          imageUrl: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=800&q=80",
-          techStack: ["Python", "OpenAI API", "Flask"],
-          link: "https://example.com",
-          githubLink: "https://github.com/mimidev/chatbot"
+          title: "To-Do List Manager",
+          description: "Simple yet powerful task manager to stay organized.",
+          imageUrl: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&q=80",
+          techStack: ["React", "LocalStorage"],
+          link: "/tools/todo",
+          githubLink: "#",
+          type: "tool"
+        },
+        {
+          title: "Memory Match Game",
+          description: "A fun and simple game to test your memory skills.",
+          imageUrl: "https://images.unsplash.com/photo-1611996575749-79a3a250f948?w=800&q=80",
+          techStack: ["React", "Game Logic"],
+          link: "/games/memory",
+          githubLink: "#",
+          type: "game"
         }
       ]);
     }

@@ -1,7 +1,14 @@
 import { z } from 'zod';
-import { insertContactMessageSchema, skills, projects, contactMessages } from './schema';
+import { 
+  insertContactMessageSchema, 
+  skills, 
+  projects, 
+  contactMessages, 
+  education, 
+  experience 
+} from './schema';
 
-export { insertContactMessageSchema, skills, projects, contactMessages };
+export { insertContactMessageSchema, skills, projects, contactMessages, education, experience };
 
 export const errorSchemas = {
   validation: z.object({
@@ -32,6 +39,24 @@ export const api = {
       path: '/api/projects',
       responses: {
         200: z.array(z.custom<typeof projects.$inferSelect>()),
+      },
+    },
+  },
+  education: {
+    list: {
+      method: 'GET' as const,
+      path: '/api/education',
+      responses: {
+        200: z.array(z.custom<typeof education.$inferSelect>()),
+      },
+    },
+  },
+  experience: {
+    list: {
+      method: 'GET' as const,
+      path: '/api/experience',
+      responses: {
+        200: z.array(z.custom<typeof experience.$inferSelect>()),
       },
     },
   },

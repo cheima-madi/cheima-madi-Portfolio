@@ -21,6 +21,16 @@ export async function registerRoutes(
     res.json(projects);
   });
 
+  app.get(api.education.list.path, async (req, res) => {
+    const education = await storage.getEducation();
+    res.json(education);
+  });
+
+  app.get(api.experience.list.path, async (req, res) => {
+    const experience = await storage.getExperience();
+    res.json(experience);
+  });
+
   app.post(api.contact.create.path, async (req, res) => {
     try {
       const input = api.contact.create.input.parse(req.body);
