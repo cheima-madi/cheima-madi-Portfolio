@@ -1,12 +1,11 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
-import { Menu, X, Code2, Github, Linkedin } from "lucide-react";
+import { Menu, X, Code2 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navItems = [
   { name: "About", href: "#about" },
   { name: "Skills", href: "#skills" },
-  { name: "Lab", href: "#lab" },
   { name: "Projects", href: "#projects" },
   { name: "Contact", href: "#contact" },
 ];
@@ -32,7 +31,7 @@ export function Navbar() {
     }
     const element = document.querySelector(href);
     if (element) {
-      const offset = 80;
+      const offset = 100;
       const bodyRect = document.body.getBoundingClientRect().top;
       const elementRect = element.getBoundingClientRect().top;
       const elementPosition = elementRect - bodyRect;
@@ -47,53 +46,52 @@ export function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 w-full z-[100] transition-all duration-500 ${
+      className={`fixed top-0 w-full z-[100] transition-all duration-700 ${
         scrolled
-          ? "bg-black/40 backdrop-blur-xl border-b border-white/5 py-3"
-          : "bg-transparent py-6"
+          ? "bg-black/40 backdrop-blur-2xl border-b border-white/5 py-3"
+          : "bg-transparent py-8"
       }`}
     >
       <div className="container mx-auto px-6 max-w-7xl flex items-center justify-between">
         <Link 
           href="/" 
-          className="flex items-center gap-2 text-2xl font-bold tracking-tighter hover:scale-105 transition-transform group"
+          className="flex items-center gap-3 text-3xl font-black tracking-tighter hover:scale-105 transition-transform group"
         >
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500 to-cyan-500 flex items-center justify-center text-white shadow-lg shadow-purple-500/20 group-hover:rotate-12 transition-transform">
-            <Code2 size={24} />
+          <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-purple-600 to-cyan-500 flex items-center justify-center text-white shadow-2xl shadow-cyan-500/20 group-hover:rotate-12 transition-transform">
+            <Code2 size={28} />
           </div>
           <span className="text-white">mimi<span className="text-cyan-400">dev</span></span>
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-8">
-          <div className="flex items-center gap-6 px-6 py-2 rounded-full border border-white/5 bg-white/5 backdrop-blur-md">
+        <div className="hidden md:flex items-center gap-12">
+          <div className="flex items-center gap-8">
             {navItems.map((item) => (
               <button
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
-                className="text-xs font-bold text-zinc-400 hover:text-white transition-colors uppercase tracking-[0.2em]"
+                className="text-xs font-black text-zinc-500 hover:text-white transition-colors uppercase tracking-[0.3em] relative group"
               >
                 {item.name}
+                <span className="absolute -bottom-2 left-0 w-0 h-1 bg-cyan-400 group-hover:w-full transition-all duration-300 rounded-full" />
               </button>
             ))}
           </div>
           
-          <div className="flex items-center gap-4">
-             <button
-              onClick={() => scrollToSection("#contact")}
-              className="px-6 py-2.5 rounded-full bg-cyan-500 text-black hover:bg-white hover:scale-105 transition-all duration-300 font-bold text-xs uppercase tracking-widest"
-            >
-              Let's Talk
-            </button>
-          </div>
+          <button
+            onClick={() => scrollToSection("#contact")}
+            className="px-8 py-3 rounded-full bg-white text-black hover:bg-cyan-400 hover:scale-110 transition-all duration-500 font-black text-xs uppercase tracking-[0.2em] shadow-xl shadow-white/5"
+          >
+            Hire Me
+          </button>
         </div>
 
         {/* Mobile Toggle */}
         <button
-          className="md:hidden text-white p-2 w-10 h-10 flex items-center justify-center rounded-xl bg-white/5 border border-white/10"
+          className="md:hidden text-white p-3 w-12 h-12 flex items-center justify-center rounded-2xl bg-white/5 border border-white/10 shadow-xl"
           onClick={() => setIsOpen(!isOpen)}
         >
-          {isOpen ? <X size={20} /> : <Menu size={20} />}
+          {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
@@ -101,26 +99,28 @@ export function Navbar() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, x: 100 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: 100 }}
-            className="fixed inset-0 top-[72px] bg-black/95 backdrop-blur-2xl md:hidden z-[90]"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.95 }}
+            className="fixed inset-0 top-[88px] bg-black/95 backdrop-blur-3xl md:hidden z-[90] p-12"
           >
-            <div className="container px-6 py-12 flex flex-col gap-8 items-center text-center">
+            <div className="flex flex-col gap-10 items-center text-center">
               {navItems.map((item) => (
                 <button
                   key={item.name}
                   onClick={() => scrollToSection(item.href)}
-                  className="text-3xl font-bold text-white hover:text-cyan-400 transition-colors uppercase tracking-widest"
+                  className="text-4xl font-black text-white hover:text-cyan-400 transition-colors uppercase tracking-widest"
                 >
                   {item.name}
                 </button>
               ))}
-              <div className="w-full h-px bg-white/10 my-4" />
-              <div className="flex gap-6">
-                <a href="#" className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-white border border-white/10"><Github size={20}/></a>
-                <a href="#" className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-white border border-white/10"><Linkedin size={20}/></a>
-              </div>
+              <div className="w-24 h-1 bg-white/10 rounded-full" />
+              <button
+                onClick={() => scrollToSection("#contact")}
+                className="w-full py-6 rounded-full bg-cyan-500 text-black font-black text-xl uppercase tracking-widest"
+              >
+                Hire Me
+              </button>
             </div>
           </motion.div>
         )}
