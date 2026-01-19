@@ -24,6 +24,28 @@ export function useProjects() {
   });
 }
 
+export function useEducation() {
+  return useQuery({
+    queryKey: [api.education.list.path],
+    queryFn: async () => {
+      const res = await fetch(api.education.list.path);
+      if (!res.ok) throw new Error("Failed to fetch education");
+      return api.education.list.responses[200].parse(await res.json());
+    },
+  });
+}
+
+export function useExperience() {
+  return useQuery({
+    queryKey: [api.experience.list.path],
+    queryFn: async () => {
+      const res = await fetch(api.experience.list.path);
+      if (!res.ok) throw new Error("Failed to fetch experience");
+      return api.experience.list.responses[200].parse(await res.json());
+    },
+  });
+}
+
 export function useContact() {
   const { toast } = useToast();
   
