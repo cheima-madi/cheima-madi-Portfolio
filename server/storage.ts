@@ -48,45 +48,50 @@ export class DatabaseStorage implements IStorage {
 
     await db.insert(skills).values([
       // Languages
-      { name: "Java", category: "language", proficiency: 90 },
+      { name: "Java (OOP)", category: "language", proficiency: 90 },
       { name: "Python", category: "language", proficiency: 85 },
-      { name: "C/C++", category: "language", proficiency: 80 },
+      { name: "C / C++", category: "language", proficiency: 80 },
       { name: "JavaScript", category: "language", proficiency: 85 },
-      { name: "PHP", category: "language", proficiency: 75 },
-      { name: "SQL", category: "language", proficiency: 85 },
+      { name: "SQL", category: "language", proficiency: 80 },
+      { name: "PHP", category: "language", proficiency: 70 },
       { name: "Assembly", category: "language", proficiency: 60 },
-      // Web Development
-      { name: "HTML5/CSS3", category: "web", proficiency: 95 },
-      { name: "React", category: "web", proficiency: 80 },
-      { name: "Spring Boot", category: "web", proficiency: 70 },
+      // Web
+      { name: "React", category: "web", proficiency: 85 },
+      { name: "Spring Boot", category: "web", proficiency: 80 },
+      { name: "HTML & CSS", category: "web", proficiency: 95 },
+      { name: "API Development", category: "web", proficiency: 80 },
       { name: "Responsive Design", category: "web", proficiency: 90 },
-      // Databases
-      { name: "MySQL", category: "database", proficiency: 85 },
-      { name: "MySQL Workbench", category: "database", proficiency: 80 },
-      { name: "Database Design", category: "database", proficiency: 85 },
-      // Software Engineering
-      { name: "UML Diagrams", category: "software_engineering", proficiency: 90 },
-      { name: "SDLC", category: "software_engineering", proficiency: 85 },
-      { name: "Agile Methodologies", category: "software_engineering", proficiency: 85 },
-      { name: "UI/UX Design (Figma, Canva)", category: "software_engineering", proficiency: 80 },
       // Tools
-      { name: "Git", category: "tool", proficiency: 75 },
-      { name: "MS Project", category: "tool", proficiency: 80 },
-      { name: "Linux", category: "tool", proficiency: 70 }
+      { name: "Git", category: "tool", proficiency: 85 },
+      { name: "IntelliJ / Eclipse", category: "tool", proficiency: 90 },
+      { name: "MySQL Workbench", category: "tool", proficiency: 85 },
+      { name: "MS Project / ProjectLibre", category: "tool", proficiency: 80 },
+      { name: "Linux / Windows", category: "tool", proficiency: 75 },
+      // Design & Core
+      { name: "UML Design", category: "software_engineering", proficiency: 90 },
+      { name: "Algorithms", category: "software_engineering", proficiency: 85 },
+      { name: "UI/UX (Figma, Canva)", category: "software_engineering", proficiency: 90 },
+      { name: "SDLC / Agile", category: "software_engineering", proficiency: 85 }
     ]);
 
     await db.insert(education).values([
       {
-        degree: "Bachelor of Software and Information Systems Technology and Engineering",
-        institution: "University of Constantine 2 Abdelhamid Mehri, Algeria",
-        period: "September 2023 – June 2026 (Expected)",
-        description: "Currently in final year (Licence 3). Advanced Programming, Software Engineering, Data Structures, Web Development, Database Management, UI/UX Design, Project Management."
+        degree: "Licence 3 - Software Engineering",
+        institution: "University of Constantine 2 Abdelhamid Mehri",
+        period: "2023 - Present",
+        description: "Ranked Top Female Student in the cohort. Specializing in Software Engineering (L3 GL). Key Modules: Advanced Web App Development, Concurrent Programming, Software Quality Testing."
+      },
+      {
+        degree: "Licence 1 & 2 - New Technology",
+        institution: "University of Constantine 2 Abdelhamid Mehri",
+        period: "Previous Years",
+        description: "Faculty of New Technology, Information and Communication (NTIC). Strong foundation in Algorithms, Computer Architecture, and Mathematics."
       },
       {
         degree: "Baccalaureate in Mathematics",
         institution: "Scientific Specialty",
         period: "June 2023",
-        description: ""
+        description: "Achieved with distinction in scientific specialty."
       }
     ]);
 

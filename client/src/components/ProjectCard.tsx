@@ -39,17 +39,30 @@ export function ProjectCard({
           }}
         />
         
-        {/* Floating Action Button */}
-        <div className="absolute inset-0 z-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
-          <a 
-            href={link || "#"} 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="px-10 py-4 bg-cyan-500 text-black rounded-full font-black text-lg shadow-2xl shadow-cyan-500/40 hover:scale-110 active:scale-95 transition-all flex items-center gap-3"
-          >
-            Live Demo
-            <ExternalLink size={20} />
-          </a>
+        {/* Action Buttons */}
+        <div className="absolute inset-0 z-20 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
+          {link && (
+            <a 
+              href={link} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="px-6 py-3 bg-cyan-500 text-black rounded-full font-black text-sm shadow-2xl shadow-cyan-500/40 hover:scale-110 active:scale-95 transition-all flex items-center gap-2"
+            >
+              Live Demo
+              <ExternalLink size={16} />
+            </a>
+          )}
+          {githubLink && (
+            <a 
+              href={githubLink} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="px-6 py-3 bg-white/10 backdrop-blur-md text-white border border-white/20 rounded-full font-black text-sm hover:bg-white hover:text-black transition-all flex items-center gap-2"
+            >
+              GitHub
+              <Github size={16} />
+            </a>
+          )}
         </div>
       </div>
 

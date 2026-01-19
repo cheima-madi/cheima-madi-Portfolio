@@ -1,6 +1,7 @@
 import { useQuery, useMutation } from "@tanstack/react-query";
-import { api, type InsertContactMessage } from "@shared/routes";
+import { api } from "@shared/routes";
 import { useToast } from "@/hooks/use-toast";
+import { type InsertContactMessage } from "@shared/schema";
 
 export function useSkills() {
   return useQuery({

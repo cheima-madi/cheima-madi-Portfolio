@@ -167,18 +167,18 @@ export default function Home() {
       {/* Projects Section */}
       <Section id="projects" title="Featured Projects" subtitle="Working applications built with modern stacks" className="bg-[#050505]">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {projects?.map((project, index) => (
-            <ProjectCard 
-              key={project.id}
-              index={index}
-              title={project.title}
-              description={project.description}
-              imageUrl={project.imageUrl}
-              techStack={project.techStack}
-              link={project.liveDemo || project.link}
-              githubLink={project.githubLink === '#' ? undefined : project.githubLink}
-            />
-          ))}
+              {projects?.map((project, index) => (
+                <ProjectCard 
+                  key={project.id}
+                  index={index}
+                  title={project.title}
+                  description={project.description}
+                  imageUrl={project.imageUrl}
+                  techStack={project.techStack}
+                  link={project.liveDemo as string | null}
+                  githubLink={project.githubLink as string | null}
+                />
+              ))}
         </div>
       </Section>
 
