@@ -60,7 +60,7 @@ export function Navbar() {
           <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-purple-600 to-cyan-500 flex items-center justify-center text-white shadow-2xl shadow-cyan-500/20 group-hover:rotate-12 transition-transform">
             <Code2 size={28} />
           </div>
-          <span className="text-white">mimi<span className="text-cyan-400">dev</span></span>
+          <span className="text-white">cheime<span className="text-cyan-400">div</span></span>
         </Link>
 
         {/* Desktop Nav */}
