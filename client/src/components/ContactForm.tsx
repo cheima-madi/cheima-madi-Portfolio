@@ -42,11 +42,11 @@ export function ContactForm() {
               name="name"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="text-base">Name</FormLabel>
+                  <FormLabel className="text-zinc-400 uppercase tracking-widest text-[10px] font-black">Full Name</FormLabel>
                   <FormControl>
                     <Input 
-                      placeholder="John Doe" 
-                      className="bg-background/50 border-white/10 h-12 focus:border-primary/50" 
+                      placeholder="Enter your name" 
+                      className="bg-black/20 border-white/5 h-12 rounded-xl focus:border-cyan-500/50 transition-all" 
                       {...field} 
                     />
                   </FormControl>
@@ -60,12 +60,12 @@ export function ContactForm() {
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="text-base">Email</FormLabel>
+                  <FormLabel className="text-zinc-400 uppercase tracking-widest text-[10px] font-black">Email Address</FormLabel>
                   <FormControl>
                     <Input 
-                      placeholder="john@example.com" 
+                      placeholder="email@example.com" 
                       type="email"
-                      className="bg-background/50 border-white/10 h-12 focus:border-primary/50" 
+                      className="bg-black/20 border-white/5 h-12 rounded-xl focus:border-cyan-500/50 transition-all" 
                       {...field} 
                     />
                   </FormControl>
@@ -80,11 +80,11 @@ export function ContactForm() {
             name="message"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-base">Message</FormLabel>
+                <FormLabel className="text-zinc-400 uppercase tracking-widest text-[10px] font-black">Professional Inquiry</FormLabel>
                 <FormControl>
                   <Textarea 
-                    placeholder="Tell me about your project..." 
-                    className="bg-background/50 border-white/10 min-h-[160px] resize-none focus:border-primary/50" 
+                    placeholder="How can I assist your organization's technical needs?" 
+                    className="bg-black/20 border-white/5 min-h-[160px] rounded-2xl resize-none focus:border-cyan-500/50 transition-all" 
                     {...field} 
                   />
                 </FormControl>

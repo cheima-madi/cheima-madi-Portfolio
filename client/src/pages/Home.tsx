@@ -35,66 +35,67 @@ export default function Home() {
           />
         </div>
 
-        <div className="container mx-auto px-6 relative z-10 flex flex-col lg:flex-row items-center justify-between gap-16 lg:text-left text-center">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="max-w-3xl flex-1 order-2 lg:order-1"
-          >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-sm font-black mb-8 text-cyan-400 tracking-[0.3em] uppercase shadow-2xl">
-              <Rocket size={16} />
-              <span>Innovating the Future</span>
-            </div>
-            
-            <h1 className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter mb-8 leading-[0.85] text-white drop-shadow-2xl">
-              Hello, I'm <br/>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-cyan-400 to-purple-400 bg-300% animate-gradient">Madi Cheima</span>
-            </h1>
-            
-            <p className="text-xl md:text-3xl text-zinc-300 mb-12 leading-relaxed font-light max-w-2xl lg:mx-0 mx-auto">
-              A motivated <span className="text-white font-bold italic underline decoration-cyan-400 decoration-4 underline-offset-8">Software Engineering Student</span> passionate about <span className="text-white">AI</span>, <span className="text-white">Innovation</span>, and building <span className="text-white font-medium">Digital Solutions</span> that speak for themselves.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start items-center">
-              <button 
-                onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-                className="group relative px-12 py-5 bg-white text-black rounded-full font-black text-xl overflow-hidden transition-all hover:scale-110 active:scale-95 shadow-2xl shadow-cyan-500/20"
-              >
-                <span className="relative z-10">View My Work</span>
-                <div className="absolute inset-0 bg-cyan-400 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
-              </button>
-              <a 
-                href={cvLink}
-                download
-                className="px-12 py-5 bg-zinc-900 border-2 border-white/10 text-white rounded-full font-black text-xl hover:bg-zinc-800 hover:border-white/40 transition-all duration-300 flex items-center gap-3 group shadow-2xl"
-              >
-                <Download size={24} className="group-hover:translate-y-1 transition-transform duration-300" />
-                Get CV
-              </a>
-            </div>
-          </motion.div>
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-16 lg:text-left text-center">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="max-w-3xl flex-1 order-2 lg:order-1"
+            >
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-sm font-black mb-8 text-cyan-400 tracking-[0.3em] uppercase shadow-2xl">
+                <Rocket size={16} />
+                <span>Passionate Software Engineering Student</span>
+              </div>
+              
+              <h1 className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter mb-8 leading-[0.85] text-white drop-shadow-2xl">
+                I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-cyan-400 to-purple-400 bg-300% animate-gradient">Madi Cheima</span>
+              </h1>
+              
+              <p className="text-xl md:text-3xl text-zinc-300 mb-12 leading-relaxed font-light max-w-2xl lg:mx-0 mx-auto">
+                Building <span className="text-white font-bold italic underline decoration-cyan-400 decoration-4 underline-offset-8">Intelligent Systems</span> with a deep passion for <span className="text-white">Computer Science</span>, <span className="text-white">AI</span>, and <span className="text-white font-medium">Modern Development</span>.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start items-center">
+                <button 
+                  onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="group relative px-12 py-5 bg-white text-black rounded-full font-black text-xl overflow-hidden transition-all hover:scale-110 active:scale-95 shadow-2xl shadow-cyan-500/20"
+                >
+                  <span className="relative z-10">Explore My Work</span>
+                  <div className="absolute inset-0 bg-cyan-400 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
+                </button>
+                <a 
+                  href={cvLink}
+                  download
+                  className="px-12 py-5 bg-zinc-900 border-2 border-white/10 text-white rounded-full font-black text-xl hover:bg-zinc-800 hover:border-white/40 transition-all duration-300 flex items-center gap-3 group shadow-2xl"
+                >
+                  <Download size={24} className="group-hover:translate-y-1 transition-transform duration-300" />
+                  Get My CV
+                </a>
+              </div>
+            </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1 }}
-            className="relative order-1 lg:order-2"
-          >
-            <div className="w-64 h-64 md:w-80 md:h-80 lg:w-[500px] lg:h-[500px] relative group">
-              <div className="absolute inset-0 bg-gradient-to-tr from-purple-600 to-cyan-500 rounded-full blur-[80px] opacity-40 group-hover:opacity-70 transition-opacity duration-700 animate-pulse" />
-              <div className="relative w-full h-full rounded-full overflow-hidden border-8 border-white/5 bg-zinc-900 shadow-[0_0_80px_rgba(34,211,238,0.2)]">
-                <img 
-                  src={mimiPhoto} 
-                  alt="Madi Cheima" 
-                  className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-110 group-hover:rotate-3"
-                />
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8, x: 50 }}
+              animate={{ opacity: 1, scale: 1, x: 0 }}
+              transition={{ duration: 1 }}
+              className="relative order-1 lg:order-2"
+            >
+              <div className="w-72 h-72 md:w-96 md:h-96 lg:w-[520px] lg:h-[520px] relative group">
+                <div className="absolute inset-0 bg-gradient-to-tr from-purple-600 to-cyan-500 rounded-full blur-[80px] opacity-40 group-hover:opacity-70 transition-opacity duration-700" />
+                <div className="relative w-full h-full rounded-full overflow-hidden border-8 border-white/5 bg-zinc-900 shadow-[0_0_80px_rgba(34,211,238,0.2)]">
+                  <img 
+                    src={mimiPhoto} 
+                    alt="Madi Cheima" 
+                    className="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105"
+                  />
+                </div>
+                <div className="absolute -bottom-4 -right-4 bg-cyan-500 w-12 h-12 rounded-full border-4 border-[#050505] shadow-2xl flex items-center justify-center">
+                  <Code2 size={24} className="text-black" />
+                </div>
               </div>
-              <div className="absolute -bottom-4 -right-4 bg-cyan-500 w-12 h-12 rounded-full border-4 border-[#050505] shadow-2xl flex items-center justify-center animate-bounce">
-                <Zap size={24} className="text-black fill-black" />
-              </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
         </div>
 
         <motion.div 
