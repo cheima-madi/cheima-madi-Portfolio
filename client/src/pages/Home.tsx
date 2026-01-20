@@ -125,19 +125,6 @@ export default function Home() {
                 As the founder of my own educational support center, I've learned that technology is best when it empowers people.
               </p>
             </div>
-            
-            <div className="grid grid-cols-2 gap-8">
-              <div className="p-10 bg-zinc-900 rounded-[40px] border border-white/5 hover:border-cyan-500/40 transition-all group shadow-2xl">
-                <Trophy className="text-purple-500 mb-6 group-hover:scale-125 transition-transform duration-500" size={56} />
-                <div className="text-4xl font-black text-white mb-2 tracking-tighter">Top Cohort</div>
-                <p className="text-xs text-zinc-500 uppercase font-black tracking-widest leading-tight opacity-60">Academic Excellence</p>
-              </div>
-              <div className="p-10 bg-zinc-900 rounded-[40px] border border-white/5 hover:border-purple-500/40 transition-all group shadow-2xl mt-16">
-                <Zap className="text-cyan-400 mb-6 group-hover:scale-125 transition-transform duration-500" size={56} />
-                <div className="text-4xl font-black text-white mb-2 tracking-tighter">Manager</div>
-                <p className="text-xs text-zinc-500 uppercase font-black tracking-widest leading-tight opacity-60">Educational Center Founder</p>
-              </div>
-            </div>
           </div>
 
           <div className="space-y-10">
