@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { insertContactMessageSchema, type InsertContactMessage } from "@shared/routes";
+import { insertContactMessageSchema, type InsertContactMessage } from "@shared/schema";
 import { useContact } from "@/hooks/use-portfolio";
 import { Loader2, Send } from "lucide-react";
 import { 

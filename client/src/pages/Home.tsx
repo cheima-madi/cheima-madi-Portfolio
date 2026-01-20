@@ -12,7 +12,7 @@ export default function Home() {
   const { data: projects, isLoading: projectsLoading } = useProjects();
   const { data: education } = useEducation();
 
-  const mimiPhoto = "/attached_assets/my-picture_1768916426311.png";
+  const mimiPhoto = "/attached_assets/profile.jpg_1768927635725.png";
   const cvLink = "/assets/MADI_CHEIMA_CV.pdf";
 
   return (

@@ -1,0 +1,91 @@
+You are a senior full-stack developer and professional UI/UX designer.
+
+This task is CRITICAL:
+My profile image MUST appear correctly on the website. Do not ignore this.
+
+I have uploaded:
+1) My CV
+2) My profile photo named exactly: profile.jpg
+
+You must:
+- Reference the image correctly in the code (relative path).
+- Verify that the image renders inside the Hero section and/or About section.
+- Do NOT use broken paths, placeholders, or external links.
+- Make sure the image loads successfully in the browser.
+- If the image does not appear, fix the path until it works.
+
+Image styling requirements:
+- Professional placement (hero or about section).
+- Proper size and aspect ratio.
+- No distortion or stretching.
+- Add subtle styling: rounded corners, soft shadow, modern framing.
+- Image must enhance personal branding and make the site feel human, confident, and professional.
+
+Portfolio goal:
+Create a highly creative, visually impressive, and professional portfolio that clearly shows passion, discipline, and strong developer mindset. The website should feel like a serious developer built it — polished, modern, and inspiring.
+
+CV usage:
+- Extract all correct information from my CV.
+- Place content logically in each section.
+- Do not invent false information.
+
+Skills & Technical Arsenal (IMPORTANT):
+Expand the skills section to include both technical and professional developer skills such as:
+- Programming fundamentals
+- Problem solving & algorithms
+- Data structures
+- Git & version control
+- Debugging & testing
+- Clean code principles
+- Responsive design
+- UI/UX basics
+- API integration
+- Database basics
+- Performance optimization
+- Security basics
+- Team collaboration
+- Documentation
+- Agile mindset
+- Continuous learning
+
+Also reflect visual themes from my photo (informatics, programming, development, digital flow, technology inspiration).
+
+Projects:
+- Keep the project structure as it is (I like it).
+- Minimum 7 projects with good descriptions.
+
+Social links & footer:
+- REMOVE Twitter completely from the site (header, footer, icons, everywhere).
+- GitHub and LinkedIn must be clickable and open correctly when clicked.
+- Use placeholders only if real links are not provided.
+
+Design requirements:
+- Modern, elegant, creative UI.
+- Strong visual hierarchy.
+- Smooth animations and micro-interactions.
+- Responsive layout.
+- Beautiful spacing and typography.
+- Color palette that feels professional and tech-inspired.
+- Site must feel alive and premium.
+
+Creativity & Passion:
+- The portfolio must communicate ambition, curiosity, creativity, discipline, and love for computer science.
+- The design should speak for itself — like a passionate developer built it with care and pride.
+- Make it visually memorable and emotionally inspiring.
+
+Technical requirements:
+- Clean, organized code.
+- Semantic HTML.
+- Modern CSS.
+- Vanilla JavaScript.
+- Well structured folders.
+- Comments where useful.
+
+Extra features:
+- Strong hero headline.
+- Call-to-action buttons.
+- Smooth scrolling.
+- Subtle hover effects.
+- Loading performance optimized.
+
+Build everything and ensure the image displays correctly before finishing.

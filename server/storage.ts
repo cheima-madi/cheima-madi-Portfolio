@@ -49,27 +49,28 @@ export class DatabaseStorage implements IStorage {
       // Languages
       { name: "Java", category: "language", proficiency: 95 },
       { name: "Python", category: "language", proficiency: 90 },
-      { name: "C", category: "language", proficiency: 85 },
-      { name: "C++", category: "language", proficiency: 85 },
+      { name: "C / C++", category: "language", proficiency: 85 },
       { name: "JavaScript", category: "language", proficiency: 90 },
       { name: "PHP", category: "language", proficiency: 80 },
       { name: "SQL", category: "language", proficiency: 90 },
-      { name: "Assembly", category: "language", proficiency: 70 },
-      // Web Development
-      { name: "HTML5/CSS3", category: "web", proficiency: 95 },
+      // Core CS & Logic
+      { name: "Algorithms", category: "software_engineering", proficiency: 95 },
+      { name: "Data Structures", category: "software_engineering", proficiency: 95 },
+      { name: "OOP Principles", category: "software_engineering", proficiency: 95 },
+      { name: "Problem Solving", category: "software_engineering", proficiency: 95 },
+      { name: "Mathematical Logic", category: "software_engineering", proficiency: 90 },
+      // Web & Frontend
       { name: "React", category: "web", proficiency: 90 },
       { name: "Spring Boot", category: "web", proficiency: 85 },
+      { name: "HTML5/CSS3", category: "web", proficiency: 95 },
       { name: "Responsive Design", category: "web", proficiency: 95 },
-      // Software Engineering
-      { name: "UML Diagrams", category: "software_engineering", proficiency: 95 },
-      { name: "UP Methodology", category: "software_engineering", proficiency: 90 },
-      { name: "Agile (SDLC)", category: "software_engineering", proficiency: 90 },
-      { name: "UI/UX (Figma, Canva)", category: "software_engineering", proficiency: 95 },
-      // Tools
-      { name: "Git", category: "tool", proficiency: 90 },
-      { name: "MS Project", category: "tool", proficiency: 85 },
-      { name: "MySQL Workbench", category: "tool", proficiency: 90 },
-      { name: "Linux (Ubuntu)", category: "tool", proficiency: 85 }
+      { name: "UI/UX Basics", category: "web", proficiency: 90 },
+      // Engineering & Tools
+      { name: "UML Design", category: "tool", proficiency: 95 },
+      { name: "Git (VCS)", category: "tool", proficiency: 90 },
+      { name: "Debugging & Testing", category: "tool", proficiency: 90 },
+      { name: "SDLC / Agile", category: "tool", proficiency: 90 },
+      { name: "Clean Code", category: "tool", proficiency: 95 }
     ]);
 
     await db.insert(education).values([
