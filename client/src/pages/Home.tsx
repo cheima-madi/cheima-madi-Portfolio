@@ -81,18 +81,66 @@ export default function Home() {
               transition={{ duration: 1 }}
               className="relative order-1 lg:order-2"
             >
-              <div className="w-72 h-72 md:w-96 md:h-96 lg:w-[520px] lg:h-[520px] relative group">
+              {/* Animated Background Elements */}
+              <div className="absolute inset-0 z-0">
+                <motion.div
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                  className="absolute inset-0 border-[1px] border-dashed border-cyan-500/20 rounded-full scale-110"
+                />
+                <motion.div
+                  animate={{ rotate: -360 }}
+                  transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+                  className="absolute inset-0 border-[1px] border-dotted border-purple-500/20 rounded-full scale-[1.25]"
+                />
+                <motion.div
+                  animate={{ 
+                    scale: [1, 1.1, 1],
+                    opacity: [0.2, 0.4, 0.2]
+                  }}
+                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                  className="absolute -top-10 -left-10 w-20 h-20 bg-cyan-500/20 blur-2xl rounded-full"
+                />
+                <motion.div
+                  animate={{ 
+                    scale: [1, 1.2, 1],
+                    opacity: [0.1, 0.3, 0.1]
+                  }}
+                  transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                  className="absolute -bottom-10 -right-10 w-32 h-32 bg-purple-500/20 blur-3xl rounded-full"
+                />
+              </div>
+
+              <div className="w-72 h-72 md:w-96 md:h-96 lg:w-[520px] lg:h-[520px] relative group z-10">
                 <div className="absolute inset-0 bg-gradient-to-tr from-purple-600 to-cyan-500 rounded-full blur-[80px] opacity-40 group-hover:opacity-70 transition-opacity duration-700" />
-                <div className="relative w-full h-full rounded-full overflow-hidden border-8 border-white/5 bg-zinc-900 shadow-[0_0_80px_rgba(34,211,238,0.2)]">
+                
+                {/* Layered Rings */}
+                <div className="absolute inset-[-15px] border-2 border-cyan-500/20 rounded-full animate-[spin_10s_linear_infinite]" />
+                <div className="absolute inset-[-30px] border border-purple-500/10 rounded-full animate-[spin_15s_linear_infinite_reverse]" />
+                
+                <div className="relative w-full h-full rounded-full overflow-hidden border-[6px] border-white/10 bg-zinc-900 shadow-[0_0_80px_rgba(34,211,238,0.3)]">
                   <img 
                     src={mimiPhoto} 
                     alt="Madi Cheima" 
-                    className="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105"
+                    className="w-full h-full object-cover grayscale-[0.1] group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-110"
                   />
                 </div>
-                <div className="absolute -bottom-4 -right-4 bg-cyan-500 w-12 h-12 rounded-full border-4 border-[#050505] shadow-2xl flex items-center justify-center">
-                  <Code2 size={24} className="text-black" />
-                </div>
+                
+                {/* Floating Tech Shapes */}
+                <motion.div
+                  animate={{ y: [0, -10, 0] }}
+                  transition={{ duration: 4, repeat: Infinity }}
+                  className="absolute top-10 -right-4 w-12 h-12 bg-zinc-900/80 backdrop-blur-md rounded-2xl border border-white/10 flex items-center justify-center shadow-2xl"
+                >
+                  <Code2 size={24} className="text-cyan-400" />
+                </motion.div>
+                <motion.div
+                  animate={{ y: [0, 10, 0] }}
+                  transition={{ duration: 5, repeat: Infinity, delay: 1 }}
+                  className="absolute bottom-20 -left-6 w-14 h-14 bg-zinc-900/80 backdrop-blur-md rounded-2xl border border-white/10 flex items-center justify-center shadow-2xl"
+                >
+                  <Rocket size={24} className="text-purple-400" />
+                </motion.div>
               </div>
             </motion.div>
           </div>

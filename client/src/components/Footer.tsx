@@ -17,7 +17,7 @@ export function Footer() {
         </div>
         
         <p className="text-muted-foreground text-sm flex items-center justify-center gap-1">
-          © {new Date().getFullYear()} MimiDev. Made with <Heart className="w-4 h-4 text-red-500 fill-red-500 animate-pulse" /> using React & Tailwind.
+          Made with ❤️ by Madi Cheima
         </p>
       </div>
     </footer>
