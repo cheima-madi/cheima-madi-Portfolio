@@ -7,6 +7,8 @@ import { useSkills, useProjects, useEducation } from "@/hooks/use-portfolio";
 import { motion } from "framer-motion";
 import { ArrowDown, Mail, Download, GraduationCap, Code2, Rocket, Brain, Trophy, Zap, MapPin, Phone } from "lucide-react";
 
+import profile_jpg from "@assets/profile.jpg.png";
+
 export default function Home() {
   const { data: skills, isLoading: skillsLoading } = useSkills();
   const { data: projects, isLoading: projectsLoading } = useProjects();
@@ -18,7 +20,6 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-[#050505] text-white overflow-x-hidden selection:bg-cyan-500/30 selection:text-cyan-200">
       <Navbar />
-
       {/* Hero Section */}
       <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-32 pb-20">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -120,7 +121,7 @@ export default function Home() {
                 
                 <div className="relative w-full h-full rounded-full overflow-hidden border-[6px] border-white/10 bg-zinc-900 shadow-[0_0_80px_rgba(34,211,238,0.3)]">
                   <img 
-                    src={mimiPhoto} 
+                    src={profile_jpg} 
                     alt="Madi Cheima" 
                     className="w-full h-full object-cover grayscale-[0.1] group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-110"
                   />
@@ -155,7 +156,6 @@ export default function Home() {
           <ArrowDown size={24} className="text-cyan-400" />
         </motion.div>
       </section>
-
       {/* About Section */}
       <Section id="about" title="About Me" className="bg-[#0a0a0a]">
         <div className="grid lg:grid-cols-2 gap-24 items-center">
@@ -198,7 +198,6 @@ export default function Home() {
           </div>
         </div>
       </Section>
-
       {/* Skills Section */}
       <Section id="skills" title="Technical Arsenal" subtitle="Categorized mastery of modern software engineering" className="bg-[#050505]">
         <div className="space-y-24">
@@ -238,7 +237,6 @@ export default function Home() {
           ))}
         </div>
       </Section>
-
       {/* Projects Section */}
       <Section id="projects" title="Featured Projects" subtitle="A showcase of creativity, logic, and technical ability" className="bg-[#0a0a0a]">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
@@ -256,7 +254,6 @@ export default function Home() {
           ))}
         </div>
       </Section>
-
       {/* Contact Section */}
       <Section id="contact" title="Hire Me" subtitle="Let's build your next digital revolution together">
         <div className="grid lg:grid-cols-3 gap-20">
@@ -310,7 +307,6 @@ export default function Home() {
           </div>
         </div>
       </Section>
-
       <Footer />
     </div>
   );
