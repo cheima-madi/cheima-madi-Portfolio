@@ -54,7 +54,9 @@ export default function Home() {
               </h1>
               
               <p className="text-xl md:text-3xl text-zinc-300 mb-12 leading-relaxed font-light max-w-2xl lg:mx-0 mx-auto">
-                Building <span className="text-white font-bold italic underline decoration-cyan-400 decoration-4 underline-offset-8">Intelligent Systems</span> with a deep passion for <span className="text-white">Computer Science</span>, <span className="text-white">AI</span>, and <span className="text-white font-medium">Modern Development</span>.
+                Passionate about <span className="text-white font-bold italic underline decoration-cyan-400 decoration-4 underline-offset-8">coding and innovation</span>, I enjoy creating digital experiences that combine <span className="text-white">creativity</span> and <span className="text-white">logic</span>.
+                <br />
+                <span className="text-zinc-400 text-lg md:text-xl font-medium italic">Always learning, always improving.</span>
               </p>
               
               <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start items-center">
