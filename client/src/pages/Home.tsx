@@ -5,14 +5,14 @@ import { ProjectCard } from "@/components/ProjectCard";
 import { ContactForm } from "@/components/ContactForm";
 import { useSkills, useProjects, useEducation } from "@/hooks/use-portfolio";
 import { motion } from "framer-motion";
-import { ArrowDown, Mail, Download, GraduationCap, Code2, Rocket, Brain, Trophy, Zap, Heart, CheckCircle2, MapPin, Phone } from "lucide-react";
+import { ArrowDown, Mail, Download, GraduationCap, Code2, Rocket, Brain, Trophy, Zap, MapPin, Phone } from "lucide-react";
 
 export default function Home() {
   const { data: skills, isLoading: skillsLoading } = useSkills();
   const { data: projects, isLoading: projectsLoading } = useProjects();
   const { data: education } = useEducation();
 
-  const mimiPhoto = "/assets/madi_cheima.png";
+  const mimiPhoto = "/attached_assets/my-picture_1768916426311.png";
   const cvLink = "/assets/MADI_CHEIMA_CV.pdf";
 
   return (
@@ -22,7 +22,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-32 pb-20">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(139,92,246,0.1),transparent_50%)]" />
+          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(139,92,246,0.15),transparent_60%)]" />
           <motion.div 
             animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
             transition={{ duration: 8, repeat: Infinity }}
@@ -35,128 +35,127 @@ export default function Home() {
           />
         </div>
 
-        <div className="container mx-auto px-6 relative z-10 flex flex-col items-center text-center">
+        <div className="container mx-auto px-6 relative z-10 flex flex-col lg:flex-row items-center justify-between gap-16 lg:text-left text-center">
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
-            className="relative mb-12"
-          >
-            <div className="w-48 h-48 md:w-64 md:h-64 relative group">
-              <div className="absolute inset-0 bg-gradient-to-tr from-purple-500 to-cyan-500 rounded-full blur-[40px] opacity-40 group-hover:opacity-60 transition-opacity animate-pulse" />
-              <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white/20 bg-zinc-900 shadow-2xl">
-                <img 
-                  src={mimiPhoto} 
-                  alt="Madi Cheima" 
-                  className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
-                  onError={(e) => {
-                    e.currentTarget.src = "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1000&auto=format&fit=crop";
-                  }}
-                />
-              </div>
-              <div className="absolute -bottom-2 -right-2 bg-green-500 w-8 h-8 rounded-full border-4 border-[#050505] shadow-lg flex items-center justify-center">
-                <div className="w-2 h-2 bg-white rounded-full animate-ping" />
-              </div>
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="max-w-4xl"
+            className="max-w-3xl flex-1 order-2 lg:order-1"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-sm font-bold mb-8 text-cyan-400 tracking-[0.2em] uppercase">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-sm font-black mb-8 text-cyan-400 tracking-[0.3em] uppercase shadow-2xl">
               <Rocket size={16} />
-              <span>Mimi Dev • Software Engineer</span>
+              <span>Innovating the Future</span>
             </div>
             
-            <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter mb-8 leading-[0.85] text-white">
-              Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-cyan-400 to-purple-400 bg-300% animate-gradient">Madi Cheima</span>
+            <h1 className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter mb-8 leading-[0.85] text-white drop-shadow-2xl">
+              Hello, I'm <br/>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-cyan-400 to-purple-400 bg-300% animate-gradient">Madi Cheima</span>
             </h1>
             
-            <p className="text-xl md:text-3xl text-zinc-400 mb-12 leading-relaxed font-light">
-              Highly motivated <span className="text-white font-medium">Computer Science Student</span>. 
-              Specializing in <span className="text-white italic">Full-stack Development</span> and <span className="text-white">AI Technologies</span>.
+            <p className="text-xl md:text-3xl text-zinc-300 mb-12 leading-relaxed font-light max-w-2xl lg:mx-0 mx-auto">
+              A motivated <span className="text-white font-bold italic underline decoration-cyan-400 decoration-4 underline-offset-8">Software Engineering Student</span> passionate about <span className="text-white">AI</span>, <span className="text-white">Innovation</span>, and building <span className="text-white font-medium">Digital Solutions</span> that speak for themselves.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start items-center">
               <button 
                 onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-                className="group relative px-10 py-5 bg-white text-black rounded-full font-black text-xl overflow-hidden transition-all hover:scale-105 active:scale-95 shadow-2xl shadow-cyan-500/20"
+                className="group relative px-12 py-5 bg-white text-black rounded-full font-black text-xl overflow-hidden transition-all hover:scale-110 active:scale-95 shadow-2xl shadow-cyan-500/20"
               >
-                <span className="relative z-10">View Projects</span>
-                <div className="absolute inset-0 bg-cyan-400 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+                <span className="relative z-10">View My Work</span>
+                <div className="absolute inset-0 bg-cyan-400 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
               </button>
               <a 
                 href={cvLink}
                 download
-                className="px-10 py-5 bg-zinc-900 border-2 border-white/10 text-white rounded-full font-bold text-xl hover:bg-zinc-800 hover:border-white/30 transition-all duration-300 flex items-center gap-3 group"
+                className="px-12 py-5 bg-zinc-900 border-2 border-white/10 text-white rounded-full font-black text-xl hover:bg-zinc-800 hover:border-white/40 transition-all duration-300 flex items-center gap-3 group shadow-2xl"
               >
-                <Download size={24} className="group-hover:translate-y-1 transition-transform" />
-                Download CV
+                <Download size={24} className="group-hover:translate-y-1 transition-transform duration-300" />
+                Get CV
               </a>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1 }}
+            className="relative order-1 lg:order-2"
+          >
+            <div className="w-64 h-64 md:w-80 md:h-80 lg:w-[500px] lg:h-[500px] relative group">
+              <div className="absolute inset-0 bg-gradient-to-tr from-purple-600 to-cyan-500 rounded-full blur-[80px] opacity-40 group-hover:opacity-70 transition-opacity duration-700 animate-pulse" />
+              <div className="relative w-full h-full rounded-full overflow-hidden border-8 border-white/5 bg-zinc-900 shadow-[0_0_80px_rgba(34,211,238,0.2)]">
+                <img 
+                  src={mimiPhoto} 
+                  alt="Madi Cheima" 
+                  className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-110 group-hover:rotate-3"
+                />
+              </div>
+              <div className="absolute -bottom-4 -right-4 bg-cyan-500 w-12 h-12 rounded-full border-4 border-[#050505] shadow-2xl flex items-center justify-center animate-bounce">
+                <Zap size={24} className="text-black fill-black" />
+              </div>
             </div>
           </motion.div>
         </div>
 
         <motion.div 
-          animate={{ y: [0, 15, 0] }}
+          animate={{ y: [0, 20, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
-          className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-30"
+          className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 opacity-40"
         >
-          <span className="text-[10px] uppercase tracking-[0.4em] font-black">Explore</span>
-          <ArrowDown size={20} className="text-cyan-400" />
+          <span className="text-[12px] uppercase tracking-[0.5em] font-black text-zinc-400">Scroll Down</span>
+          <ArrowDown size={24} className="text-cyan-400" />
         </motion.div>
       </section>
 
       {/* About Section */}
       <Section id="about" title="About Me" className="bg-[#0a0a0a]">
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
-          <div className="space-y-10">
-            <div className="space-y-6">
-              <h3 className="text-4xl font-black flex items-center gap-4">
-                <Brain className="text-purple-400" size={40} />
-                Student & Creative
+        <div className="grid lg:grid-cols-2 gap-24 items-center">
+          <div className="space-y-12">
+            <div className="space-y-8">
+              <h3 className="text-5xl font-black flex items-center gap-6 text-white tracking-tighter">
+                <Brain className="text-purple-500" size={56} />
+                Driven by Passion
               </h3>
               <p className="text-2xl text-zinc-300 leading-relaxed font-light">
-                Passionate about applying innovative technologies to solve real-world problems. Currently a <span className="text-cyan-400 font-bold underline decoration-2 underline-offset-4">Top Student</span> in my cohort, focusing on Software Engineering at Constantine 2.
+                I'm a highly motivated and ambitious <span className="text-white font-bold italic underline decoration-cyan-400 decoration-4 underline-offset-8">Software Engineering student</span> with strong academic achievements. 
+                I believe that <span className="text-cyan-400 font-black">Artificial Intelligence</span> has the potential to transform education forever.
               </p>
-              <p className="text-lg text-zinc-500 leading-relaxed">
-                My journey is defined by constant learning and building. Whether it's complex UML architectures or sleek React interfaces, I strive for excellence in every line of code.
+              <p className="text-lg text-zinc-500 leading-relaxed font-medium">
+                I'm not just a student; I'm a <span className="text-white">problem solver</span> and a <span className="text-white">leader</span>. 
+                As the founder of my own educational support center, I've learned that technology is best when it empowers people.
               </p>
             </div>
             
-            <div className="grid grid-cols-2 gap-6">
-              <div className="p-8 bg-zinc-900 rounded-3xl border border-white/5 hover:border-cyan-500/30 transition-all group shadow-xl">
-                <Trophy className="text-purple-400 mb-4 group-hover:scale-125 transition-transform" size={48} />
-                <div className="text-3xl font-black text-white mb-2">9th / 393</div>
-                <p className="text-xs text-zinc-500 uppercase font-bold tracking-widest leading-tight">Current Academic Rank</p>
+            <div className="grid grid-cols-2 gap-8">
+              <div className="p-10 bg-zinc-900 rounded-[40px] border border-white/5 hover:border-cyan-500/40 transition-all group shadow-2xl">
+                <Trophy className="text-purple-500 mb-6 group-hover:scale-125 transition-transform duration-500" size={56} />
+                <div className="text-4xl font-black text-white mb-2 tracking-tighter">Top Cohort</div>
+                <p className="text-xs text-zinc-500 uppercase font-black tracking-widest leading-tight opacity-60">Academic Excellence</p>
               </div>
-              <div className="p-8 bg-zinc-900 rounded-3xl border border-white/5 hover:border-purple-500/30 transition-all group shadow-xl mt-12">
-                <Zap className="text-cyan-400 mb-4 group-hover:scale-125 transition-transform" size={48} />
-                <div className="text-3xl font-black text-white mb-2">L3 GL</div>
-                <p className="text-xs text-zinc-500 uppercase font-bold tracking-widest leading-tight">Software Engineering</p>
+              <div className="p-10 bg-zinc-900 rounded-[40px] border border-white/5 hover:border-purple-500/40 transition-all group shadow-2xl mt-16">
+                <Zap className="text-cyan-400 mb-6 group-hover:scale-125 transition-transform duration-500" size={56} />
+                <div className="text-4xl font-black text-white mb-2 tracking-tighter">Manager</div>
+                <p className="text-xs text-zinc-500 uppercase font-black tracking-widest leading-tight opacity-60">Educational Center Founder</p>
               </div>
             </div>
           </div>
 
-          <div className="space-y-8">
-            <h3 className="text-2xl font-black uppercase tracking-widest text-zinc-600 mb-8">Academic Journey</h3>
+          <div className="space-y-10">
+            <h3 className="text-2xl font-black uppercase tracking-[0.4em] text-zinc-700 mb-12">Academic Journey</h3>
             {education?.map((item, idx) => (
               <motion.div 
                 key={idx} 
                 initial={{ opacity: 0, x: 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: idx * 0.1 }}
-                className="relative pl-12 border-l-4 border-zinc-800 py-6 group"
+                transition={{ delay: idx * 0.15 }}
+                className="relative pl-14 border-l-4 border-zinc-800 py-8 group"
               >
-                <div className="absolute left-[-14px] top-1/2 -translate-y-1/2 w-[24px] h-[24px] bg-zinc-900 border-4 border-zinc-800 rounded-full group-hover:border-cyan-500 group-hover:bg-cyan-500 group-hover:shadow-[0_0_20px_rgba(34,211,238,0.5)] transition-all" />
-                <div className="bg-zinc-900/50 p-6 rounded-2xl border border-white/5 group-hover:border-white/10 transition-all">
-                  <span className="text-cyan-400 font-black text-xs tracking-[0.3em] uppercase mb-2 block">{item.period}</span>
-                  <h4 className="text-2xl font-black text-white mb-2">{item.degree}</h4>
-                  <p className="text-zinc-400 font-bold mb-4">{item.institution}</p>
-                  <p className="text-zinc-500 text-sm leading-relaxed italic">{item.description || "Excelling in core computer science modules including Data Structures, Algorithms, and Software Design."}</p>
+                <div className="absolute left-[-16px] top-1/2 -translate-y-1/2 w-[28px] h-[28px] bg-zinc-950 border-4 border-zinc-800 rounded-full group-hover:border-cyan-500 group-hover:bg-cyan-500 group-hover:shadow-[0_0_30px_rgba(34,211,238,0.6)] transition-all duration-500" />
+                <div className="bg-zinc-900/40 backdrop-blur-md p-8 rounded-[32px] border border-white/5 group-hover:border-white/10 transition-all duration-500 shadow-2xl">
+                  <span className="text-cyan-400 font-black text-xs tracking-[0.4em] uppercase mb-4 block">{item.period}</span>
+                  <h4 className="text-2xl font-black text-white mb-3 tracking-tight">{item.degree}</h4>
+                  <p className="text-zinc-400 font-bold mb-6 text-sm">{item.institution}</p>
+                  <p className="text-zinc-500 text-sm leading-relaxed italic opacity-80">{item.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -164,99 +163,111 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* Projects Section */}
-      <Section id="projects" title="Featured Projects" subtitle="Working applications built with modern stacks" className="bg-[#050505]">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              {projects?.map((project, index) => (
-                <ProjectCard 
-                  key={project.id}
-                  index={index}
-                  title={project.title}
-                  description={project.description}
-                  imageUrl={project.imageUrl}
-                  techStack={project.techStack}
-                  link={project.liveDemo as string | null}
-                  githubLink={project.githubLink as string | null}
-                />
-              ))}
+      {/* Skills Section */}
+      <Section id="skills" title="Technical Arsenal" subtitle="Categorized mastery of modern software engineering" className="bg-[#050505]">
+        <div className="space-y-24">
+          {['language', 'web', 'software_engineering', 'tool'].map((category) => (
+            <div key={category} className="space-y-12">
+              <h4 className="text-sm font-black uppercase tracking-[0.6em] text-zinc-600 flex items-center gap-8">
+                <div className="h-px flex-1 bg-gradient-to-r from-transparent to-white/10" />
+                {category.replace('_', ' ')}s
+                <div className="h-px flex-1 bg-gradient-to-l from-transparent to-white/10" />
+              </h4>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
+                {skills?.filter(s => s.category === category).map((skill, index) => (
+                  <motion.div 
+                    key={skill.id} 
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.05 }}
+                    className="p-10 bg-zinc-900/60 backdrop-blur-xl rounded-[32px] border border-white/5 hover:border-cyan-500/40 transition-all text-center group relative overflow-hidden shadow-2xl"
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-cyan-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    <div className="relative z-10">
+                      <div className="text-xl font-black text-white mb-6 uppercase tracking-widest transition-colors group-hover:text-cyan-400">{skill.name}</div>
+                      <div className="h-2.5 w-full bg-zinc-800 rounded-full overflow-hidden shadow-inner border border-white/5">
+                        <motion.div 
+                          initial={{ width: 0 }}
+                          whileInView={{ width: `${skill.proficiency}%` }}
+                          transition={{ duration: 1.5, ease: "easeOut" }}
+                          className="h-full bg-gradient-to-r from-purple-600 via-cyan-500 to-purple-600 bg-200% animate-gradient" 
+                        />
+                      </div>
+                      <div className="mt-4 text-[11px] font-black text-zinc-500 uppercase tracking-[0.3em] group-hover:text-white transition-colors">{skill.proficiency}% Expertise</div>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </Section>
 
-      {/* Skills Section */}
-      <Section id="skills" title="Technical Arsenal" subtitle="Tools and languages I've mastered" className="bg-[#0a0a0a]">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
-          {skills?.map((skill, index) => (
-            <motion.div 
-              key={skill.id} 
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ delay: index * 0.05 }}
-              className="p-8 bg-zinc-900/80 backdrop-blur-sm rounded-3xl border border-white/5 hover:border-cyan-500/50 transition-all text-center group relative overflow-hidden"
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-cyan-500/10 opacity-0 group-hover:opacity-100 transition-opacity" />
-              <div className="relative z-10">
-                <div className="text-lg font-black text-white mb-4 uppercase tracking-widest">{skill.name}</div>
-                <div className="h-2 w-full bg-zinc-800 rounded-full overflow-hidden shadow-inner">
-                  <motion.div 
-                    initial={{ width: 0 }}
-                    whileInView={{ width: `${skill.proficiency}%` }}
-                    className="h-full bg-gradient-to-r from-purple-500 via-cyan-500 to-purple-500 bg-200% animate-gradient" 
-                  />
-                </div>
-                <div className="mt-2 text-[10px] font-black text-zinc-500 uppercase tracking-[0.2em]">{skill.proficiency}% Mastery</div>
-              </div>
-            </motion.div>
+      {/* Projects Section */}
+      <Section id="projects" title="Featured Projects" subtitle="A showcase of creativity, logic, and technical ability" className="bg-[#0a0a0a]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          {projects?.map((project, index) => (
+            <ProjectCard 
+              key={project.id}
+              index={index}
+              title={project.title}
+              description={project.description}
+              imageUrl={project.imageUrl}
+              techStack={project.techStack}
+              link={project.liveDemo as string | null}
+              githubLink={project.githubLink as string | null}
+            />
           ))}
         </div>
       </Section>
 
       {/* Contact Section */}
-      <Section id="contact" title="Hire Me" subtitle="Available for internships, freelance, and junior roles">
-        <div className="grid lg:grid-cols-3 gap-16">
-          <div className="lg:col-span-1 space-y-8">
-            <div className="space-y-8">
-              <h3 className="text-3xl font-black text-white">Let's build your next big idea together</h3>
-              <p className="text-zinc-400 text-lg font-light leading-relaxed">
-                I'm currently looking for new opportunities. Whether you have a specific project in mind or just want to discuss tech, I'm just a message away!
+      <Section id="contact" title="Hire Me" subtitle="Let's build your next digital revolution together">
+        <div className="grid lg:grid-cols-3 gap-20">
+          <div className="lg:col-span-1 space-y-12">
+            <div className="space-y-10">
+              <h3 className="text-4xl font-black text-white tracking-tighter leading-tight">Ready to collaborate on something amazing?</h3>
+              <p className="text-zinc-400 text-xl font-light leading-relaxed">
+                I'm currently seeking internships and professional opportunities where I can apply my passion for <span className="text-white underline decoration-purple-500 underline-offset-8">innovation</span> and <span className="text-white underline decoration-cyan-400 underline-offset-8">AI</span>.
               </p>
               
-              <div className="space-y-6">
-                <div className="flex items-center gap-6 p-6 bg-zinc-900 rounded-3xl border border-white/5 group hover:border-cyan-500/30 transition-all">
-                  <div className="w-14 h-14 rounded-2xl bg-cyan-500/10 flex items-center justify-center text-cyan-400 group-hover:bg-cyan-500 group-hover:text-black transition-all">
-                    <Mail size={28} />
+              <div className="space-y-8 pt-8">
+                <div className="flex items-center gap-8 p-8 bg-zinc-900 rounded-[32px] border border-white/5 group hover:border-cyan-500/40 transition-all shadow-2xl">
+                  <div className="w-16 h-16 rounded-2xl bg-cyan-500/10 flex items-center justify-center text-cyan-400 group-hover:bg-cyan-500 group-hover:text-black transition-all duration-500">
+                    <Mail size={32} />
                   </div>
                   <div>
-                    <p className="text-xs font-black text-zinc-500 uppercase tracking-widest mb-1">Email Me</p>
-                    <a href="mailto:cheima.madi@univ-constantine2.dz" className="text-white font-bold hover:text-cyan-400 transition-colors break-all">cheima.madi@univ-constantine2.dz</a>
+                    <p className="text-xs font-black text-zinc-500 uppercase tracking-[0.3em] mb-2">Message Me</p>
+                    <a href="mailto:cheima.madi@univ-constantine2.dz" className="text-white font-black hover:text-cyan-400 transition-colors break-all text-sm tracking-tight">cheima.madi@univ-constantine2.dz</a>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-6 p-6 bg-zinc-900 rounded-3xl border border-white/5 group hover:border-purple-500/30 transition-all">
-                  <div className="w-14 h-14 rounded-2xl bg-purple-500/10 flex items-center justify-center text-purple-400 group-hover:bg-purple-500 group-hover:text-white transition-all">
-                    <Phone size={28} />
+                <div className="flex items-center gap-8 p-8 bg-zinc-900 rounded-[32px] border border-white/5 group hover:border-purple-500/40 transition-all shadow-2xl">
+                  <div className="w-16 h-16 rounded-2xl bg-purple-500/10 flex items-center justify-center text-purple-400 group-hover:bg-purple-500 group-hover:text-white transition-all duration-500">
+                    <Phone size={32} />
                   </div>
                   <div>
-                    <p className="text-xs font-black text-zinc-500 uppercase tracking-widest mb-1">Phone</p>
-                    <p className="text-white font-bold">+213 776 404 617</p>
+                    <p className="text-xs font-black text-zinc-500 uppercase tracking-[0.3em] mb-2">Direct Call</p>
+                    <p className="text-white font-black text-lg">+213 776 404 617</p>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-6 p-6 bg-zinc-900 rounded-3xl border border-white/5 group hover:border-pink-500/30 transition-all">
-                  <div className="w-14 h-14 rounded-2xl bg-pink-500/10 flex items-center justify-center text-pink-400 group-hover:bg-pink-500 group-hover:text-white transition-all">
-                    <MapPin size={28} />
+                <div className="flex items-center gap-8 p-8 bg-zinc-900 rounded-[32px] border border-white/5 group hover:border-pink-500/40 transition-all shadow-2xl">
+                  <div className="w-16 h-16 rounded-2xl bg-pink-500/10 flex items-center justify-center text-pink-400 group-hover:bg-pink-500 group-hover:text-white transition-all duration-500">
+                    <MapPin size={32} />
                   </div>
                   <div>
-                    <p className="text-xs font-black text-zinc-500 uppercase tracking-widest mb-1">Location</p>
-                    <p className="text-white font-bold">Constantine, Algeria</p>
+                    <p className="text-xs font-black text-zinc-500 uppercase tracking-[0.3em] mb-2">Location</p>
+                    <p className="text-white font-black text-lg">Constantine, Algeria</p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <div className="lg:col-span-2">
-            <div className="p-10 bg-zinc-900/50 backdrop-blur-xl rounded-[40px] border border-white/5 shadow-2xl relative overflow-hidden">
-               <div className="absolute top-0 right-0 p-8 opacity-5">
-                  <Mail size={200} />
+            <div className="p-12 bg-zinc-900/40 backdrop-blur-2xl rounded-[60px] border border-white/5 shadow-[0_0_100px_rgba(0,0,0,0.5)] relative overflow-hidden">
+               <div className="absolute -top-20 -right-20 p-8 opacity-5">
+                  <Rocket size={400} />
                </div>
                <ContactForm />
             </div>

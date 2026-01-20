@@ -1,0 +1,54 @@
+You are a professional web developer and UI/UX designer.
+
+I want you to build me a strong, creative, and visually attractive personal portfolio website that shows my passion for computer science, creativity, and problem solving.
+
+I have uploaded:
+- My CV (for all personal and professional information)
+- My personal photo (to be used in the design)
+
+You must carefully extract all relevant information from my CV and place it correctly in the portfolio sections (About Me, Skills, Education, Projects, Experience, Contact, etc.). Only include information that logically matches each section.
+
+Photo requirements:
+- Use my photo professionally in the Hero section and/or About Me section.
+- Make sure the photo is well positioned, well sized, and visually balanced with the layout.
+- Apply light styling if needed (rounded corners, soft shadow, subtle frame, or modern mask effect).
+- The photo must enhance the personal branding and make the portfolio feel authentic, confident, and human.
+- Do NOT distort or stretch the image.
+- Optimize the image for fast loading.
+
+Portfolio design requirements:
+- Modern, clean, and creative UI.
+- Smooth animations and transitions.
+- Responsive layout (mobile, tablet, desktop).
+- Clear typography and strong color harmony.
+- A professional but energetic vibe reflecting a passionate computer science student / developer.
+- Easy navigation and fast performance.
+
+Projects section:
+- Create at least 7 project cards.
+- Each project must include:
+  - Project title
+  - Short description
+  - Technologies used
+  - Demo or placeholder link
+  - GitHub link or placeholder
+- Projects should demonstrate creativity, logic, and technical ability (web apps, tools, AI ideas, databases, etc.).
+
+Content tone:
+- Motivated, passionate, confident, and professional.
+- Highlight curiosity, love for learning, innovation, and growth mindset.
+
+Technical requirements:
+- Clean and readable code.
+- Well-structured folders and files.
+- Comments in the code where necessary.
+- Use modern HTML, CSS, and JavaScript.
+- Include subtle animations (hover effects, transitions, scroll effects).
+
+Extra features:
+- Hero section with a strong headline expressing creativity and passion for computer science.
+- Call-to-action buttons (View Projects / Contact Me).
+- Smooth scrolling navigation.
+- Make the website feel alive, modern, creative, and impressive.
+
+Build everything automatically and provide the full working project.

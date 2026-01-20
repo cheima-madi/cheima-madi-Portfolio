@@ -40,7 +40,6 @@ export class DatabaseStorage implements IStorage {
   }
 
   async seedData(): Promise<void> {
-    // Clear existing to re-seed with full CV data
     await db.delete(skills);
     await db.delete(projects);
     await db.delete(education);
@@ -48,50 +47,55 @@ export class DatabaseStorage implements IStorage {
 
     await db.insert(skills).values([
       // Languages
-      { name: "Java (OOP)", category: "language", proficiency: 90 },
-      { name: "Python", category: "language", proficiency: 85 },
-      { name: "C / C++", category: "language", proficiency: 80 },
-      { name: "JavaScript", category: "language", proficiency: 85 },
-      { name: "SQL", category: "language", proficiency: 80 },
-      { name: "PHP", category: "language", proficiency: 70 },
-      { name: "Assembly", category: "language", proficiency: 60 },
-      // Web
-      { name: "React", category: "web", proficiency: 85 },
-      { name: "Spring Boot", category: "web", proficiency: 80 },
-      { name: "HTML & CSS", category: "web", proficiency: 95 },
-      { name: "API Development", category: "web", proficiency: 80 },
-      { name: "Responsive Design", category: "web", proficiency: 90 },
+      { name: "Java", category: "language", proficiency: 95 },
+      { name: "Python", category: "language", proficiency: 90 },
+      { name: "C", category: "language", proficiency: 85 },
+      { name: "C++", category: "language", proficiency: 85 },
+      { name: "JavaScript", category: "language", proficiency: 90 },
+      { name: "PHP", category: "language", proficiency: 80 },
+      { name: "SQL", category: "language", proficiency: 90 },
+      { name: "Assembly", category: "language", proficiency: 70 },
+      // Web Development
+      { name: "HTML5/CSS3", category: "web", proficiency: 95 },
+      { name: "React", category: "web", proficiency: 90 },
+      { name: "Spring Boot", category: "web", proficiency: 85 },
+      { name: "Responsive Design", category: "web", proficiency: 95 },
+      // Software Engineering
+      { name: "UML Diagrams", category: "software_engineering", proficiency: 95 },
+      { name: "UP Methodology", category: "software_engineering", proficiency: 90 },
+      { name: "Agile (SDLC)", category: "software_engineering", proficiency: 90 },
+      { name: "UI/UX (Figma, Canva)", category: "software_engineering", proficiency: 95 },
       // Tools
-      { name: "Git", category: "tool", proficiency: 85 },
-      { name: "IntelliJ / Eclipse", category: "tool", proficiency: 90 },
-      { name: "MySQL Workbench", category: "tool", proficiency: 85 },
-      { name: "MS Project / ProjectLibre", category: "tool", proficiency: 80 },
-      { name: "Linux / Windows", category: "tool", proficiency: 75 },
-      // Design & Core
-      { name: "UML Design", category: "software_engineering", proficiency: 90 },
-      { name: "Algorithms", category: "software_engineering", proficiency: 85 },
-      { name: "UI/UX (Figma, Canva)", category: "software_engineering", proficiency: 90 },
-      { name: "SDLC / Agile", category: "software_engineering", proficiency: 85 }
+      { name: "Git", category: "tool", proficiency: 90 },
+      { name: "MS Project", category: "tool", proficiency: 85 },
+      { name: "MySQL Workbench", category: "tool", proficiency: 90 },
+      { name: "Linux (Ubuntu)", category: "tool", proficiency: 85 }
     ]);
 
     await db.insert(education).values([
       {
-        degree: "Licence 3 - Software Engineering",
+        degree: "License 3 – Software Engineering",
         institution: "University of Constantine 2 Abdelhamid Mehri",
-        period: "2023 - Present",
-        description: "Ranked Top Female Student in the cohort. Specializing in Software Engineering (L3 GL). Key Modules: Advanced Web App Development, Concurrent Programming, Software Quality Testing."
+        period: "2025 – Present",
+        description: "Focusing on Advanced Web Development, Concurrent Programming, and Software Quality Systems. Ranked top of cohort."
       },
       {
-        degree: "Licence 1 & 2 - New Technology",
+        degree: "License 2 – Computer Science",
         institution: "University of Constantine 2 Abdelhamid Mehri",
-        period: "Previous Years",
-        description: "Faculty of New Technology, Information and Communication (NTIC). Strong foundation in Algorithms, Computer Architecture, and Mathematics."
+        period: "2024 – 2025",
+        description: "Core modules in Algorithms, OOP, and Database Design."
       },
       {
-        degree: "Baccalaureate in Mathematics",
-        institution: "Scientific Specialty",
-        period: "June 2023",
-        description: "Achieved with distinction in scientific specialty."
+        degree: "License 1 – New Technology",
+        institution: "University of Constantine 2 Abdelhamid Mehri",
+        period: "2023 – 2024",
+        description: "Foundation in Computer Architecture, Mathematics, and Logic."
+      },
+      {
+        degree: "Baccalaureate (Mathematics Specialty)",
+        institution: "Constantine, Algeria",
+        period: "2023",
+        description: "Obtained with distinction."
       }
     ]);
 
@@ -100,26 +104,36 @@ export class DatabaseStorage implements IStorage {
         role: "Founder & Manager",
         company: "Private Educational Support Center",
         period: "2023 – Present",
-        description: "Founded and manage an educational support center providing tutoring services for children and adults. Developed strong leadership, time management, planning, and communication skills."
+        description: "Coordinated curriculum, managed administrative operations, and supervised teaching staff. Inspired by AI to create personalized learning tools."
       }
     ]);
 
     await db.insert(projects).values([
       {
         title: "E-Commerce Clothing Store",
-        description: "Full functional online shopping platform with product catalog, cart, and checkout. Applied UI/UX principles and Agile management.",
+        description: "Fully functional online platform with catalog, cart, and checkout. Built using React and Spring Boot.",
         imageUrl: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80",
-        techStack: ["React", "UI/UX", "Agile"],
+        techStack: ["React", "Spring Boot", "MySQL", "UI/UX"],
         link: "#",
         githubLink: "#",
         type: "project",
-        liveDemo: "/projects/clothing-store"
+        liveDemo: "#"
       },
       {
-        title: "Desktop Application with Advanced GUI",
-        description: "JavaFX application with sophisticated UI, concurrent programming, and software design patterns.",
+        title: "Advanced JavaFX Desktop App",
+        description: "Desktop application with sophisticated GUI, concurrent programming, and software design patterns.",
         imageUrl: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&q=80",
-        techStack: ["Java", "JavaFX", "Design Patterns"],
+        techStack: ["Java", "JavaFX", "Concurrent Programming"],
+        link: "#",
+        githubLink: "#",
+        type: "project",
+        liveDemo: "#"
+      },
+      {
+        title: "Nebula Text Analyzer",
+        description: "Web-based analysis tool for statistics, reading time, and character counting.",
+        imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+        techStack: ["JavaScript", "HTML", "CSS"],
         link: "#",
         githubLink: "#",
         type: "project",
@@ -127,53 +141,43 @@ export class DatabaseStorage implements IStorage {
       },
       {
         title: "Tic-Tac-Toe Game",
-        description: "Classic interactive game with a clean, modern interface.",
+        description: "Interactive game with modern pink-themed design and smooth animations.",
         imageUrl: "https://images.unsplash.com/photo-1611996575749-79a3a250f948?w=800&q=80",
-        techStack: ["React", "Game Logic"],
+        techStack: ["JavaScript", "HTML", "CSS"],
         link: "#",
         githubLink: "#",
-        type: "game",
-        liveDemo: "/games/tictactoe"
+        type: "project",
+        liveDemo: "#"
+      },
+      {
+        title: "Bikini Bottom Dash",
+        description: "SpongeBob-themed runner game with engaging mechanics and underwater graphics.",
+        imageUrl: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&q=80",
+        techStack: ["JavaScript", "HTML5 Canvas"],
+        link: "#",
+        githubLink: "#",
+        type: "project",
+        liveDemo: "#"
       },
       {
         title: "Pomodoro Focus Timer",
-        description: "Passionate study tool with focus/break cycles and customizable intervals.",
-        imageUrl: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&q=80",
-        techStack: ["React", "Hooks"],
-        link: "#",
-        githubLink: "#",
-        type: "tool",
-        liveDemo: "/tools/pomodoro"
-      },
-      {
-        title: "Bikini Bottom High Quiz",
-        description: "Fun quiz game inspired by Bikini Bottom, testing your knowledge!",
-        imageUrl: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80",
-        techStack: ["React", "Animations"],
-        link: "#",
-        githubLink: "#",
-        type: "game",
-        liveDemo: "/games/bikini-bottom"
-      },
-      {
-        title: "Modern Calculator",
-        description: "Sleek, responsive calculator with advanced mathematical operations.",
-        imageUrl: "https://images.unsplash.com/photo-1587145820266-a5951ee6f677?w=800&q=80",
-        techStack: ["React", "Math.js"],
-        link: "#",
-        githubLink: "#",
-        type: "tool",
-        liveDemo: "/tools/calculator"
-      },
-      {
-        title: "ToDoList Manager",
-        description: "Professional task management tool with persistence and categories.",
+        description: "Productivity app with task management and customizable study sessions.",
         imageUrl: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&q=80",
-        techStack: ["React", "LocalStorage"],
+        techStack: ["JavaScript", "HTML", "CSS"],
         link: "#",
         githubLink: "#",
-        type: "tool",
-        liveDemo: "/tools/todo"
+        type: "project",
+        liveDemo: "#"
+      },
+      {
+        title: "Modern Multi-OS Calculator",
+        description: "Feature-rich calculator supporting advanced mathematical operations.",
+        imageUrl: "https://images.unsplash.com/photo-1587145820266-a5951ee6f677?w=800&q=80",
+        techStack: ["JavaScript", "HTML", "CSS"],
+        link: "#",
+        githubLink: "#",
+        type: "project",
+        liveDemo: "#"
       }
     ]);
   }
