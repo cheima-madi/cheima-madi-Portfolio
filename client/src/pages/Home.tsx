@@ -125,7 +125,7 @@ export default function Home() {
                   <img 
                     src={profile_jpg} 
                     alt="Madi Cheima" 
-                    className="w-full h-full object-cover grayscale-[0.1] group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-110 pl-[0px] pr-[0px]"
+                    className="w-full h-full object-cover grayscale-[0.1] group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-110 pt-[0px] pb-[0px] pl-[0px] pr-[0px]"
                   />
                 </div>
                 
