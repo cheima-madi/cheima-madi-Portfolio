@@ -1,8 +1,8 @@
-# cheimediv Portfolio
+# cheima.div Portfolio
 
 ## Overview
 
-A personal portfolio website for Madi Cheima (cheimediv), showcasing skills, projects, education, and experience. Built as a full-stack TypeScript application with a React frontend and Express backend, using PostgreSQL for data persistence. The portfolio features a modern dark theme with animated UI components and a contact form.
+A personal portfolio website for Madi Cheima (cheima.div), showcasing skills, projects, education, and experience. Built as a full-stack TypeScript application with a React frontend and Express backend, using PostgreSQL for data persistence. The portfolio features a modern dark theme with animated UI components and a contact form.
 
 ## User Preferences
 
