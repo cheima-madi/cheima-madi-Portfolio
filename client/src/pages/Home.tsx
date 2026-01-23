@@ -23,16 +23,16 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-32 pb-20">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(139,92,246,0.15),transparent_60%)]" />
+          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(245,158,11,0.1),transparent_60%)]" />
           <motion.div 
-            animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
+            animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0.4, 0.2] }}
             transition={{ duration: 8, repeat: Infinity }}
-            className="absolute -top-[20%] -left-[10%] w-[60%] h-[60%] bg-purple-600/20 blur-[120px] rounded-full" 
+            className="absolute -top-[20%] -left-[10%] w-[60%] h-[60%] bg-amber-600/10 blur-[120px] rounded-full" 
           />
           <motion.div 
-            animate={{ scale: [1, 1.3, 1], opacity: [0.2, 0.4, 0.2] }}
+            animate={{ scale: [1, 1.3, 1], opacity: [0.1, 0.3, 0.1] }}
             transition={{ duration: 10, repeat: Infinity, delay: 1 }}
-            className="absolute top-[40%] -right-[10%] w-[50%] h-[50%] bg-cyan-600/20 blur-[120px] rounded-full" 
+            className="absolute top-[40%] -right-[10%] w-[50%] h-[50%] bg-orange-600/10 blur-[120px] rounded-full" 
           />
         </div>
 
@@ -50,7 +50,7 @@ export default function Home() {
               </div>
               
               <h1 className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter mb-8 leading-[0.85] text-white drop-shadow-2xl">
-                I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-cyan-400 to-purple-400 bg-300% animate-gradient">Madi Cheima</span>
+                I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-amber-400 to-orange-400 bg-300% animate-gradient">Madi Cheima</span>
               </h1>
               
               <p className="text-xl md:text-3xl text-zinc-300 mb-12 leading-relaxed font-light max-w-2xl lg:mx-0 mx-auto">
@@ -89,12 +89,12 @@ export default function Home() {
                 <motion.div
                   animate={{ rotate: 360 }}
                   transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                  className="absolute inset-0 border-[1px] border-dashed border-cyan-500/20 rounded-full scale-110"
+                  className="absolute inset-0 border-[1px] border-dashed border-amber-500/20 rounded-full scale-110"
                 />
                 <motion.div
                   animate={{ rotate: -360 }}
                   transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-                  className="absolute inset-0 border-[1px] border-dotted border-purple-500/20 rounded-full scale-[1.25]"
+                  className="absolute inset-0 border-[1px] border-dotted border-orange-500/20 rounded-full scale-[1.25]"
                 />
                 <motion.div
                   animate={{ 
@@ -102,7 +102,7 @@ export default function Home() {
                     opacity: [0.2, 0.4, 0.2]
                   }}
                   transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                  className="absolute -top-10 -left-10 w-20 h-20 bg-cyan-500/20 blur-2xl rounded-full"
+                  className="absolute -top-10 -left-10 w-20 h-20 bg-amber-500/20 blur-2xl rounded-full"
                 />
                 <motion.div
                   animate={{ 
@@ -110,18 +110,18 @@ export default function Home() {
                     opacity: [0.1, 0.3, 0.1]
                   }}
                   transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                  className="absolute -bottom-10 -right-10 w-32 h-32 bg-purple-500/20 blur-3xl rounded-full"
+                  className="absolute -bottom-10 -right-10 w-32 h-32 bg-orange-500/20 blur-3xl rounded-full"
                 />
               </div>
 
               <div className="w-72 h-72 md:w-96 md:h-96 lg:w-[520px] lg:h-[520px] relative group z-10">
-                <div className="absolute inset-0 bg-gradient-to-tr from-purple-600 to-cyan-500 rounded-full blur-[80px] opacity-40 group-hover:opacity-70 transition-opacity duration-700" />
+                <div className="absolute inset-0 bg-gradient-to-tr from-orange-600 to-amber-500 rounded-full blur-[80px] opacity-40 group-hover:opacity-70 transition-opacity duration-700" />
                 
                 {/* Layered Rings */}
-                <div className="absolute inset-[-15px] border-2 border-cyan-500/20 rounded-full animate-[spin_10s_linear_infinite]" />
-                <div className="absolute inset-[-30px] border border-purple-500/10 rounded-full animate-[spin_15s_linear_infinite_reverse]" />
+                <div className="absolute inset-[-15px] border-2 border-amber-500/20 rounded-full animate-[spin_10s_linear_infinite]" />
+                <div className="absolute inset-[-30px] border border-orange-500/10 rounded-full animate-[spin_15s_linear_infinite_reverse]" />
                 
-                <div className="relative w-full h-full rounded-full overflow-hidden border-[6px] border-white/10 bg-zinc-900 shadow-[0_0_80px_rgba(34,211,238,0.3)]">
+                <div className="relative w-full h-full rounded-full overflow-hidden border-[6px] border-white/10 bg-zinc-900 shadow-[0_0_80px_rgba(245,158,11,0.3)]">
                   <img 
                     src={profile_jpg} 
                     alt="Madi Cheima" 
@@ -135,14 +135,14 @@ export default function Home() {
                   transition={{ duration: 4, repeat: Infinity }}
                   className="absolute top-10 -right-4 w-12 h-12 bg-zinc-900/80 backdrop-blur-md rounded-2xl border border-white/10 flex items-center justify-center shadow-2xl"
                 >
-                  <Code2 size={24} className="text-cyan-400" />
+                  <Code2 size={24} className="text-amber-400" />
                 </motion.div>
                 <motion.div
                   animate={{ y: [0, 10, 0] }}
                   transition={{ duration: 5, repeat: Infinity, delay: 1 }}
                   className="absolute bottom-20 -left-6 w-14 h-14 bg-zinc-900/80 backdrop-blur-md rounded-2xl border border-white/10 flex items-center justify-center shadow-2xl"
                 >
-                  <Rocket size={24} className="text-purple-400" />
+                  <Rocket size={24} className="text-orange-400" />
                 </motion.div>
               </div>
             </motion.div>

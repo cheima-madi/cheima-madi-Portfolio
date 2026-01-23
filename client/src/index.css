@@ -8,34 +8,34 @@
   --font-display: 'Outfit', sans-serif;
   --font-body: 'Plus Jakarta Sans', sans-serif;
 
-  /* Deep Space Dark Theme */
-  --background: 240 10% 4%;
-  --foreground: 0 0% 98%;
+  /* Soft, Professional Warm Tones (Inspired by profile photo) */
+  --background: 24 10% 5%;
+  --foreground: 20 10% 98%;
 
-  --card: 240 10% 6%;
-  --card-foreground: 0 0% 98%;
+  --card: 24 10% 7%;
+  --card-foreground: 20 10% 98%;
 
-  --popover: 240 10% 4%;
-  --popover-foreground: 0 0% 98%;
+  --popover: 24 10% 5%;
+  --popover-foreground: 20 10% 98%;
 
-  --primary: 265 89% 66%;
+  --primary: 15 85% 65%; /* Warm Coral/Peach-ish tone for secondary accent */
   --primary-foreground: 0 0% 100%;
 
-  --secondary: 240 6% 10%;
-  --secondary-foreground: 0 0% 98%;
+  --secondary: 24 6% 12%;
+  --secondary-foreground: 20 10% 98%;
 
-  --muted: 240 6% 10%;
-  --muted-foreground: 240 5% 65%;
+  --muted: 24 6% 12%;
+  --muted-foreground: 24 5% 60%;
 
-  --accent: 265 89% 66%;
+  --accent: 35 90% 60%; /* Golden Amber for highlights */
   --accent-foreground: 0 0% 100%;
 
   --destructive: 0 63% 31%;
   --destructive-foreground: 0 0% 98%;
 
-  --border: 240 6% 12%;
-  --input: 240 6% 12%;
-  --ring: 265 89% 66%;
+  --border: 24 6% 15%;
+  --input: 24 6% 15%;
+  --ring: 15 85% 65%;
 
   --radius: 0.75rem;
 }
