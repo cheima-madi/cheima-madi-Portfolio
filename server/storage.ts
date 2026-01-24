@@ -53,24 +53,38 @@ export class DatabaseStorage implements IStorage {
       { name: "JavaScript", category: "language", proficiency: 90 },
       { name: "PHP", category: "language", proficiency: 80 },
       { name: "SQL", category: "language", proficiency: 90 },
+      { name: "C#", category: "language", proficiency: 75 },
+      { name: "TypeScript", category: "language", proficiency: 85 },
+      
       // Core CS & Logic
       { name: "Algorithms", category: "software_engineering", proficiency: 95 },
       { name: "Data Structures", category: "software_engineering", proficiency: 95 },
       { name: "OOP Principles", category: "software_engineering", proficiency: 95 },
       { name: "Problem Solving", category: "software_engineering", proficiency: 95 },
       { name: "Mathematical Logic", category: "software_engineering", proficiency: 90 },
+      { name: "System Design", category: "software_engineering", proficiency: 85 },
+      { name: "Design Patterns", category: "software_engineering", proficiency: 88 },
+      
       // Web & Frontend
       { name: "React", category: "web", proficiency: 90 },
       { name: "Spring Boot", category: "web", proficiency: 85 },
       { name: "HTML5/CSS3", category: "web", proficiency: 95 },
+      { name: "Next.js", category: "web", proficiency: 80 },
+      { name: "Node.js", category: "web", proficiency: 85 },
+      { name: "Express.js", category: "web", proficiency: 88 },
+      { name: "RESTful APIs", category: "web", proficiency: 92 },
       { name: "Responsive Design", category: "web", proficiency: 95 },
-      { name: "UI/UX Basics", category: "web", proficiency: 90 },
+      
       // Engineering & Tools
+      { name: "Git & GitHub", category: "tool", proficiency: 95 },
+      { name: "PostgreSQL", category: "tool", proficiency: 90 },
+      { name: "Docker", category: "tool", proficiency: 80 },
+      { name: "Linux / Bash", category: "tool", proficiency: 85 },
       { name: "UML Design", category: "tool", proficiency: 95 },
-      { name: "Git (VCS)", category: "tool", proficiency: 90 },
-      { name: "Debugging & Testing", category: "tool", proficiency: 90 },
-      { name: "SDLC / Agile", category: "tool", proficiency: 90 },
-      { name: "Clean Code", category: "tool", proficiency: 95 }
+      { name: "VS Code", category: "tool", proficiency: 98 },
+      { name: "IntelliJ IDEA", category: "tool", proficiency: 92 },
+      { name: "Agile / Scrum", category: "tool", proficiency: 90 },
+      { name: "Postman", category: "tool", proficiency: 95 }
     ]);
 
     await db.insert(education).values([
