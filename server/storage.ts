@@ -89,15 +89,27 @@ export class DatabaseStorage implements IStorage {
 
     await db.insert(education).values([
       {
-        degree: "License – Software Engineering",
+        degree: "License 3 – Software Engineering",
         institution: "University of Constantine 2 Abdelhamid Mehri",
-        period: "2023 – Present",
-        description: "Currently in License 3, specializing in Advanced Web Development and AI. Ranked top of cohort."
+        period: "2024 – 2025",
+        description: "Currently focusing on Advanced Web Development, Concurrent Programming, and Software Quality Systems. Ranked top of cohort."
+      },
+      {
+        degree: "License 2 – Computer Science",
+        institution: "University of Constantine 2 Abdelhamid Mehri",
+        period: "2023 – 2024",
+        description: "Core modules in Algorithms, OOP, and Database Design."
+      },
+      {
+        degree: "License 1 – New Technology",
+        institution: "University of Constantine 2 Abdelhamid Mehri",
+        period: "2022 – 2023",
+        description: "Foundation in Computer Architecture, Mathematics, and Logic."
       },
       {
         degree: "Baccalaureate (Mathematics Specialty)",
         institution: "Constantine, Algeria",
-        period: "2023",
+        period: "2022",
         description: "Obtained with distinction."
       }
     ]);

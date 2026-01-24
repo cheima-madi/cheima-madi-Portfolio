@@ -151,35 +151,41 @@ export default function Home() {
       </section>
       {/* About Section */}
       <Section id="about" title="About Me" className="bg-[#050505]">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-8">
-            <h3 className="text-5xl font-black flex items-center gap-6 text-white tracking-tighter">
-              <Brain className="text-orange-500" size={56} />
-              Driven by Passion
-            </h3>
-            <p className="text-xl text-zinc-300 leading-relaxed font-light">
-              I'm a highly motivated and ambitious <span className="text-white font-bold italic underline decoration-orange-500 decoration-4 underline-offset-8">Software Engineering student</span> with strong academic achievements. 
-              I believe that <span className="text-orange-400 font-black">Artificial Intelligence</span> has the potential to transform education forever.
-            </p>
-            <p className="text-lg text-zinc-500 leading-relaxed font-medium">
-              I'm not just a student; I'm a <span className="text-white">problem solver</span> and a <span className="text-white">leader</span>. 
-              As the founder of my own educational support center, I've learned that technology is best when it empowers people. My journey is defined by a relentless pursuit of excellence and a commitment to creating meaningful impact through code.
-            </p>
+        <div className="grid lg:grid-cols-2 gap-24 items-center">
+          <div className="space-y-12">
+            <div className="space-y-8">
+              <h3 className="text-5xl font-black flex items-center gap-6 text-white tracking-tighter">
+                <Brain className="text-orange-500" size={56} />
+                Driven by Passion
+              </h3>
+              <p className="text-2xl text-zinc-300 leading-relaxed font-light">
+                I'm a highly motivated and ambitious <span className="text-white font-bold italic underline decoration-orange-400 decoration-4 underline-offset-8">Software Engineering student</span> with strong academic achievements. 
+                I believe that <span className="text-orange-400 font-black">Artificial Intelligence</span> has the potential to transform education forever.
+              </p>
+              <p className="text-lg text-zinc-500 leading-relaxed font-medium">
+                I'm not just a student; I'm a <span className="text-white">problem solver</span> and a <span className="text-white">leader</span>. 
+                As the founder of my own educational support center, I've learned that technology is best when it empowers people.
+              </p>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="space-y-10">
+            <h3 className="text-2xl font-black uppercase tracking-[0.4em] text-zinc-700 mb-12">Academic Journey</h3>
             {education?.map((item, idx) => (
               <motion.div 
                 key={idx} 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: idx * 0.1 }}
-                className="bg-zinc-900/40 backdrop-blur-md p-6 rounded-[24px] border border-white/5 hover:border-white/10 transition-all duration-500 shadow-2xl group"
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ delay: idx * 0.15 }}
+                className="relative pl-14 border-l-4 border-zinc-800 py-8 group"
               >
-                <span className="text-orange-400 font-black text-[10px] tracking-[0.3em] uppercase mb-3 block">{item.period}</span>
-                <h4 className="text-xl font-black text-white mb-2 tracking-tight group-hover:text-orange-400 transition-colors">{item.degree}</h4>
-                <p className="text-zinc-400 font-bold mb-4 text-xs">{item.institution}</p>
-                <p className="text-zinc-500 text-xs leading-relaxed opacity-80">{item.description}</p>
+                <div className="absolute left-[-16px] top-1/2 -translate-y-1/2 w-[28px] h-[28px] bg-zinc-950 border-4 border-zinc-800 rounded-full group-hover:border-orange-500 group-hover:bg-orange-500 group-hover:shadow-[0_0_30px_rgba(245,158,11,0.6)] transition-all duration-500" />
+                <div className="bg-zinc-900/40 backdrop-blur-md p-8 rounded-[32px] border border-white/5 group-hover:border-white/10 transition-all duration-500 shadow-2xl">
+                  <span className="text-orange-400 font-black text-xs tracking-[0.4em] uppercase mb-4 block">{item.period}</span>
+                  <h4 className="text-2xl font-black text-white mb-3 tracking-tight group-hover:text-orange-400 transition-colors">{item.degree}</h4>
+                  <p className="text-zinc-400 font-bold mb-6 text-sm">{item.institution}</p>
+                  <p className="text-zinc-500 text-sm leading-relaxed italic opacity-80">{item.description}</p>
+                </div>
               </motion.div>
             ))}
           </div>

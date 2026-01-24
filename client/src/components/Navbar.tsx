@@ -57,10 +57,10 @@ export function Navbar() {
           href="/" 
           className="flex items-center gap-3 text-3xl font-black tracking-tighter hover:scale-105 transition-transform group"
         >
-          <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-purple-600 to-cyan-500 flex items-center justify-center text-white shadow-2xl shadow-cyan-500/20 group-hover:rotate-12 transition-transform">
+          <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-orange-600 to-amber-500 flex items-center justify-center text-white shadow-2xl shadow-orange-500/20 group-hover:rotate-12 transition-transform">
             <Code2 size={28} />
           </div>
-          <span className="text-white">cheima<span className="text-cyan-400">.div</span></span>
+          <span className="text-white">cheima<span className="text-orange-400">.div</span></span>
         </Link>
 
         {/* Desktop Nav */}
@@ -73,7 +73,7 @@ export function Navbar() {
                 className="text-xs font-black text-zinc-500 hover:text-white transition-colors uppercase tracking-[0.3em] relative group"
               >
                 {item.name}
-                <span className="absolute -bottom-2 left-0 w-0 h-1 bg-cyan-400 group-hover:w-full transition-all duration-300 rounded-full" />
+                <span className="absolute -bottom-2 left-0 w-0 h-1 bg-orange-400 group-hover:w-full transition-all duration-300 rounded-full" />
               </button>
             ))}
           </div>
