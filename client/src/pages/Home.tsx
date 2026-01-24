@@ -23,16 +23,16 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-32 pb-20">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(245,158,11,0.1),transparent_60%)]" />
+          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.05),transparent_60%)]" />
           <motion.div 
-            animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0.4, 0.2] }}
+            animate={{ scale: [1, 1.2, 1], opacity: [0.1, 0.2, 0.1] }}
             transition={{ duration: 8, repeat: Infinity }}
-            className="absolute -top-[20%] -left-[10%] w-[60%] h-[60%] bg-amber-600/10 blur-[120px] rounded-full" 
+            className="absolute -top-[20%] -left-[10%] w-[60%] h-[60%] bg-blue-600/10 blur-[120px] rounded-full" 
           />
           <motion.div 
-            animate={{ scale: [1, 1.3, 1], opacity: [0.1, 0.3, 0.1] }}
+            animate={{ scale: [1, 1.3, 1], opacity: [0.05, 0.15, 0.05] }}
             transition={{ duration: 10, repeat: Infinity, delay: 1 }}
-            className="absolute top-[40%] -right-[10%] w-[50%] h-[50%] bg-orange-600/10 blur-[120px] rounded-full" 
+            className="absolute top-[40%] -right-[10%] w-[50%] h-[50%] bg-indigo-600/10 blur-[120px] rounded-full" 
           />
         </div>
 
@@ -50,7 +50,7 @@ export default function Home() {
               </div>
               
               <h1 className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter mb-8 leading-[0.85] text-white drop-shadow-2xl">
-                I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-amber-400 to-orange-400 bg-300% animate-gradient">Madi Cheima</span>
+                I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-blue-400 bg-300% animate-gradient">Madi Cheima</span>
               </h1>
               
               <p className="text-xl md:text-3xl text-zinc-300 mb-12 leading-relaxed font-light max-w-2xl lg:mx-0 mx-auto">
@@ -89,12 +89,12 @@ export default function Home() {
                 <motion.div
                   animate={{ rotate: 360 }}
                   transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                  className="absolute inset-0 border-[1px] border-dashed border-amber-500/20 rounded-full scale-110"
+                  className="absolute inset-0 border-[1px] border-dashed border-blue-500/20 rounded-full scale-110"
                 />
                 <motion.div
                   animate={{ rotate: -360 }}
                   transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-                  className="absolute inset-0 border-[1px] border-dotted border-orange-500/20 rounded-full scale-[1.25]"
+                  className="absolute inset-0 border-[1px] border-dotted border-indigo-500/20 rounded-full scale-[1.25]"
                 />
                 <motion.div
                   animate={{ 
@@ -102,7 +102,7 @@ export default function Home() {
                     opacity: [0.2, 0.4, 0.2]
                   }}
                   transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                  className="absolute -top-10 -left-10 w-20 h-20 bg-amber-500/20 blur-2xl rounded-full"
+                  className="absolute -top-10 -left-10 w-20 h-20 bg-blue-500/20 blur-2xl rounded-full"
                 />
                 <motion.div
                   animate={{ 
@@ -110,18 +110,18 @@ export default function Home() {
                     opacity: [0.1, 0.3, 0.1]
                   }}
                   transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                  className="absolute -bottom-10 -right-10 w-32 h-32 bg-orange-500/20 blur-3xl rounded-full"
+                  className="absolute -bottom-10 -right-10 w-32 h-32 bg-indigo-500/20 blur-3xl rounded-full"
                 />
               </div>
 
               <div className="w-72 h-72 md:w-96 md:h-96 lg:w-[520px] lg:h-[520px] relative group z-10">
-                <div className="absolute inset-0 bg-gradient-to-tr from-orange-600 to-amber-500 rounded-full blur-[80px] opacity-40 group-hover:opacity-70 transition-opacity duration-700" />
+                <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/30 to-indigo-500/30 rounded-full blur-[80px] opacity-40 group-hover:opacity-70 transition-opacity duration-700" />
                 
                 {/* Layered Rings */}
-                <div className="absolute inset-[-15px] border-2 border-amber-500/20 rounded-full animate-[spin_10s_linear_infinite]" />
-                <div className="absolute inset-[-30px] border border-orange-500/10 rounded-full animate-[spin_15s_linear_infinite_reverse]" />
+                <div className="absolute inset-[-15px] border-2 border-blue-500/20 rounded-full animate-[spin_10s_linear_infinite]" />
+                <div className="absolute inset-[-30px] border border-indigo-500/10 rounded-full animate-[spin_15s_linear_infinite_reverse]" />
                 
-                <div className="relative w-full h-full rounded-full overflow-hidden border-[6px] border-white/10 bg-zinc-900 shadow-[0_0_80px_rgba(245,158,11,0.3)]">
+                <div className="relative w-full h-full rounded-full overflow-hidden border-[6px] border-white/10 bg-slate-900 shadow-[0_0_80px_rgba(59,130,246,0.3)]">
                   <img 
                     src={profile_jpg} 
                     alt="Madi Cheima" 
@@ -135,66 +135,51 @@ export default function Home() {
                   transition={{ duration: 4, repeat: Infinity }}
                   className="absolute top-10 -right-4 w-12 h-12 bg-zinc-900/80 backdrop-blur-md rounded-2xl border border-white/10 flex items-center justify-center shadow-2xl"
                 >
-                  <Code2 size={24} className="text-amber-400" />
+                  <Code2 size={24} className="text-blue-400" />
                 </motion.div>
                 <motion.div
                   animate={{ y: [0, 10, 0] }}
                   transition={{ duration: 5, repeat: Infinity, delay: 1 }}
-                  className="absolute bottom-20 -left-6 w-14 h-14 bg-zinc-900/80 backdrop-blur-md rounded-2xl border border-white/10 flex items-center justify-center shadow-2xl"
+                  className="absolute bottom-20 -left-6 w-14 h-14 bg-slate-900/80 backdrop-blur-md rounded-2xl border border-white/10 flex items-center justify-center shadow-2xl"
                 >
-                  <Rocket size={24} className="text-orange-400" />
+                  <Rocket size={24} className="text-indigo-400" />
                 </motion.div>
               </div>
             </motion.div>
           </div>
         </div>
-
-        <motion.div 
-          animate={{ y: [0, 20, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-          className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 opacity-40"
-        >
-          <span className="text-[12px] uppercase tracking-[0.5em] font-black text-zinc-400">Scroll Down</span>
-          <ArrowDown size={24} className="text-cyan-400" />
-        </motion.div>
       </section>
       {/* About Section */}
-      <Section id="about" title="About Me" className="bg-[#0a0a0a]">
-        <div className="grid lg:grid-cols-2 gap-24 items-center">
-          <div className="space-y-12">
-            <div className="space-y-8">
-              <h3 className="text-5xl font-black flex items-center gap-6 text-white tracking-tighter">
-                <Brain className="text-purple-500" size={56} />
-                Driven by Passion
-              </h3>
-              <p className="text-2xl text-zinc-300 leading-relaxed font-light">
-                I'm a highly motivated and ambitious <span className="text-white font-bold italic underline decoration-cyan-400 decoration-4 underline-offset-8">Software Engineering student</span> with strong academic achievements. 
-                I believe that <span className="text-cyan-400 font-black">Artificial Intelligence</span> has the potential to transform education forever.
-              </p>
-              <p className="text-lg text-zinc-500 leading-relaxed font-medium">
-                I'm not just a student; I'm a <span className="text-white">problem solver</span> and a <span className="text-white">leader</span>. 
-                As the founder of my own educational support center, I've learned that technology is best when it empowers people.
-              </p>
-            </div>
+      <Section id="about" title="About Me" className="bg-[#050505]">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="space-y-8">
+            <h3 className="text-5xl font-black flex items-center gap-6 text-white tracking-tighter">
+              <Brain className="text-blue-500" size={56} />
+              Driven by Passion
+            </h3>
+            <p className="text-xl text-zinc-300 leading-relaxed font-light">
+              I'm a highly motivated and ambitious <span className="text-white font-bold italic underline decoration-blue-500 decoration-4 underline-offset-8">Software Engineering student</span> with strong academic achievements. 
+              I believe that <span className="text-blue-400 font-black">Artificial Intelligence</span> has the potential to transform education forever.
+            </p>
+            <p className="text-lg text-zinc-500 leading-relaxed font-medium">
+              I'm not just a student; I'm a <span className="text-white">problem solver</span> and a <span className="text-white">leader</span>. 
+              As the founder of my own educational support center, I've learned that technology is best when it empowers people. My journey is defined by a relentless pursuit of excellence and a commitment to creating meaningful impact through code.
+            </p>
           </div>
 
-          <div className="space-y-10">
-            <h3 className="text-2xl font-black uppercase tracking-[0.4em] text-zinc-700 mb-12">Academic Journey</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {education?.map((item, idx) => (
               <motion.div 
                 key={idx} 
-                initial={{ opacity: 0, x: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: idx * 0.15 }}
-                className="relative pl-14 border-l-4 border-zinc-800 py-8 group"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: idx * 0.1 }}
+                className="bg-slate-900/40 backdrop-blur-md p-6 rounded-[24px] border border-white/5 hover:border-white/10 transition-all duration-500 shadow-2xl group"
               >
-                <div className="absolute left-[-16px] top-1/2 -translate-y-1/2 w-[28px] h-[28px] bg-zinc-950 border-4 border-zinc-800 rounded-full group-hover:border-cyan-500 group-hover:bg-cyan-500 group-hover:shadow-[0_0_30px_rgba(34,211,238,0.6)] transition-all duration-500" />
-                <div className="bg-zinc-900/40 backdrop-blur-md p-8 rounded-[32px] border border-white/5 group-hover:border-white/10 transition-all duration-500 shadow-2xl">
-                  <span className="text-cyan-400 font-black text-xs tracking-[0.4em] uppercase mb-4 block">{item.period}</span>
-                  <h4 className="text-2xl font-black text-white mb-3 tracking-tight">{item.degree}</h4>
-                  <p className="text-zinc-400 font-bold mb-6 text-sm">{item.institution}</p>
-                  <p className="text-zinc-500 text-sm leading-relaxed italic opacity-80">{item.description}</p>
-                </div>
+                <span className="text-blue-400 font-black text-[10px] tracking-[0.3em] uppercase mb-3 block">{item.period}</span>
+                <h4 className="text-xl font-black text-white mb-2 tracking-tight group-hover:text-blue-400 transition-colors">{item.degree}</h4>
+                <p className="text-zinc-400 font-bold mb-4 text-xs">{item.institution}</p>
+                <p className="text-zinc-500 text-xs leading-relaxed opacity-80">{item.description}</p>
               </motion.div>
             ))}
           </div>
@@ -257,52 +242,52 @@ export default function Home() {
         </div>
       </Section>
       {/* Contact Section */}
-      <Section id="contact" title="Hire Me" subtitle="Let's build your next digital revolution together">
-        <div className="grid lg:grid-cols-3 gap-20">
-          <div className="lg:col-span-1 space-y-12">
-            <div className="space-y-10">
-              <h3 className="text-4xl font-black text-white tracking-tighter leading-tight">Ready to collaborate on something amazing?</h3>
-              <p className="text-zinc-400 text-xl font-light leading-relaxed">
-                I'm currently seeking internships and professional opportunities where I can apply my passion for <span className="text-white underline decoration-purple-500 underline-offset-8">innovation</span> and <span className="text-white underline decoration-cyan-400 underline-offset-8">AI</span>.
+      <Section id="contact" title="Hire Me" subtitle="Let's build your next digital revolution together" className="pb-0">
+        <div className="grid lg:grid-cols-3 gap-16 mb-20">
+          <div className="lg:col-span-1 space-y-8">
+            <div className="space-y-6">
+              <h3 className="text-3xl font-black text-white tracking-tighter leading-tight">Ready to collaborate on something amazing?</h3>
+              <p className="text-zinc-400 text-lg font-light leading-relaxed">
+                I'm currently seeking internships and professional opportunities where I can apply my passion for <span className="text-white underline decoration-blue-500 underline-offset-8">innovation</span> and <span className="text-white underline decoration-blue-400 underline-offset-8">AI</span>.
               </p>
               
-              <div className="space-y-8 pt-8">
-                <div className="flex items-center gap-8 p-8 bg-zinc-900 rounded-[32px] border border-white/5 group hover:border-cyan-500/40 transition-all shadow-2xl">
-                  <div className="w-16 h-16 rounded-2xl bg-cyan-500/10 flex items-center justify-center text-cyan-400 group-hover:bg-cyan-500 group-hover:text-black transition-all duration-500">
-                    <Mail size={32} />
+              <div className="space-y-4">
+                <div className="flex items-center gap-6 p-6 bg-slate-900/60 rounded-[24px] border border-white/5 group hover:border-blue-500/40 transition-all shadow-xl">
+                  <div className="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition-all duration-500">
+                    <Mail size={24} />
                   </div>
                   <div>
-                    <p className="text-xs font-black text-zinc-500 uppercase tracking-[0.3em] mb-2">Message Me</p>
-                    <a href="mailto:cheima.madi@univ-constantine2.dz" className="text-white font-black hover:text-cyan-400 transition-colors break-all text-sm tracking-tight">cheima.madi@univ-constantine2.dz</a>
+                    <p className="text-[10px] font-black text-zinc-500 uppercase tracking-[0.2em] mb-1">Email</p>
+                    <a href="mailto:cheima.madi@univ-constantine2.dz" className="text-white font-black hover:text-blue-400 transition-colors break-all text-xs tracking-tight">cheima.madi@univ-constantine2.dz</a>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-8 p-8 bg-zinc-900 rounded-[32px] border border-white/5 group hover:border-purple-500/40 transition-all shadow-2xl">
-                  <div className="w-16 h-16 rounded-2xl bg-purple-500/10 flex items-center justify-center text-purple-400 group-hover:bg-purple-500 group-hover:text-white transition-all duration-500">
-                    <Phone size={32} />
+                <div className="flex items-center gap-6 p-6 bg-slate-900/60 rounded-[24px] border border-white/5 group hover:border-indigo-500/40 transition-all shadow-xl">
+                  <div className="w-12 h-12 rounded-xl bg-indigo-500/10 flex items-center justify-center text-indigo-400 group-hover:bg-indigo-500 group-hover:text-white transition-all duration-500">
+                    <Phone size={24} />
                   </div>
                   <div>
-                    <p className="text-xs font-black text-zinc-500 uppercase tracking-[0.3em] mb-2">Direct Call</p>
-                    <p className="text-white font-black text-lg">+213 776 404 617</p>
+                    <p className="text-[10px] font-black text-zinc-500 uppercase tracking-[0.2em] mb-1">Phone</p>
+                    <p className="text-white font-black text-sm">+213 776 404 617</p>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-8 p-8 bg-zinc-900 rounded-[32px] border border-white/5 group hover:border-pink-500/40 transition-all shadow-2xl">
-                  <div className="w-16 h-16 rounded-2xl bg-pink-500/10 flex items-center justify-center text-pink-400 group-hover:bg-pink-500 group-hover:text-white transition-all duration-500">
-                    <MapPin size={32} />
+                <div className="flex items-center gap-6 p-6 bg-slate-900/60 rounded-[24px] border border-white/5 group hover:border-blue-500/40 transition-all shadow-xl">
+                  <div className="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition-all duration-500">
+                    <MapPin size={24} />
                   </div>
                   <div>
-                    <p className="text-xs font-black text-zinc-500 uppercase tracking-[0.3em] mb-2">Location</p>
-                    <p className="text-white font-black text-lg">Constantine, Algeria</p>
+                    <p className="text-[10px] font-black text-zinc-500 uppercase tracking-[0.2em] mb-1">Location</p>
+                    <p className="text-white font-black text-sm">Constantine, Algeria</p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <div className="lg:col-span-2">
-            <div className="p-12 bg-zinc-900/40 backdrop-blur-2xl rounded-[60px] border border-white/5 shadow-[0_0_100px_rgba(0,0,0,0.5)] relative overflow-hidden">
-               <div className="absolute -top-20 -right-20 p-8 opacity-5">
-                  <Rocket size={400} />
+            <div className="p-8 md:p-12 bg-slate-900/40 backdrop-blur-2xl rounded-[48px] border border-white/5 shadow-2xl relative overflow-hidden">
+               <div className="absolute -top-10 -right-10 p-8 opacity-5">
+                  <Rocket size={300} />
                </div>
                <ContactForm />
             </div>
