@@ -33,7 +33,7 @@ export function SkillCard({ name, category, proficiency, index }: SkillCardProps
           initial={{ width: 0 }}
           whileInView={{ width: `${proficiency}%` }}
           transition={{ duration: 1.5, ease: "easeOut" }}
-          className="h-full bg-gradient-to-r from-primary to-purple-400"
+          className="h-full bg-gradient-to-r from-primary to-orange-400"
         />
       </div>
     </motion.div>

@@ -25,7 +25,7 @@ export function ProjectCard({
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.1 }}
-      className="group relative bg-zinc-900 rounded-[40px] overflow-hidden border border-white/5 hover:border-cyan-500/30 transition-all duration-700 shadow-2xl"
+      className="group relative bg-zinc-900 rounded-[40px] overflow-hidden border border-white/5 hover:border-orange-500/30 transition-all duration-700 shadow-2xl"
     >
       {/* Image Container */}
       <div className="aspect-[16/10] overflow-hidden relative">
@@ -46,7 +46,7 @@ export function ProjectCard({
               href={link} 
               target="_blank" 
               rel="noopener noreferrer"
-              className="px-6 py-3 bg-cyan-500 text-black rounded-full font-black text-sm shadow-2xl shadow-cyan-500/40 hover:scale-110 active:scale-95 transition-all flex items-center gap-2"
+              className="px-6 py-3 bg-orange-500 text-black rounded-full font-black text-sm shadow-2xl shadow-orange-500/40 hover:scale-110 active:scale-95 transition-all flex items-center gap-2"
             >
               Live Demo
               <ExternalLink size={16} />
@@ -68,9 +68,9 @@ export function ProjectCard({
 
       {/* Content */}
       <div className="p-10 pt-0 relative z-20 -mt-12">
-        <div className="bg-zinc-800/90 backdrop-blur-2xl border border-white/10 p-8 rounded-[32px] shadow-2xl group-hover:border-cyan-500/20 transition-all">
+        <div className="bg-zinc-800/90 backdrop-blur-2xl border border-white/10 p-8 rounded-[32px] shadow-2xl group-hover:border-orange-500/20 transition-all">
           <div className="flex justify-between items-start mb-4">
-             <h3 className="text-2xl font-black text-white group-hover:text-cyan-400 transition-colors">
+             <h3 className="text-2xl font-black text-white group-hover:text-orange-400 transition-colors">
               {title}
             </h3>
             {githubLink && (
@@ -93,7 +93,7 @@ export function ProjectCard({
             {techStack.map((tech) => (
               <span 
                 key={tech} 
-                className="text-[10px] font-black uppercase tracking-widest px-4 py-1.5 bg-black/30 text-cyan-400 rounded-full border border-cyan-500/20"
+                className="text-[10px] font-black uppercase tracking-widest px-4 py-1.5 bg-black/30 text-orange-400 rounded-full border border-orange-500/20"
               >
                 {tech}
               </span>

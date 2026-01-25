@@ -46,7 +46,7 @@ export function ContactForm() {
                   <FormControl>
                     <Input 
                       placeholder="Enter your name" 
-                      className="bg-black/20 border-white/5 h-12 rounded-xl focus:border-cyan-500/50 transition-all" 
+                      className="bg-black/20 border-white/5 h-12 rounded-xl focus:border-orange-500/50 transition-all" 
                       {...field} 
                     />
                   </FormControl>
@@ -65,7 +65,7 @@ export function ContactForm() {
                     <Input 
                       placeholder="email@example.com" 
                       type="email"
-                      className="bg-black/20 border-white/5 h-12 rounded-xl focus:border-cyan-500/50 transition-all" 
+                      className="bg-black/20 border-white/5 h-12 rounded-xl focus:border-orange-500/50 transition-all" 
                       {...field} 
                     />
                   </FormControl>
@@ -84,7 +84,7 @@ export function ContactForm() {
                 <FormControl>
                   <Textarea 
                     placeholder="How can I assist your organization's technical needs?" 
-                    className="bg-black/20 border-white/5 min-h-[160px] rounded-2xl resize-none focus:border-cyan-500/50 transition-all" 
+                    className="bg-black/20 border-white/5 min-h-[160px] rounded-2xl resize-none focus:border-orange-500/50 transition-all" 
                     {...field} 
                   />
                 </FormControl>
@@ -96,7 +96,7 @@ export function ContactForm() {
           <button
             type="submit"
             disabled={isPending}
-            className="w-full h-14 rounded-xl bg-gradient-to-r from-primary to-purple-600 text-white font-bold text-lg hover:shadow-lg hover:shadow-primary/25 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+            className="w-full h-14 rounded-xl bg-gradient-to-r from-primary to-amber-600 text-white font-bold text-lg hover:shadow-lg hover:shadow-primary/25 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
           >
             {isPending ? (
               <>
