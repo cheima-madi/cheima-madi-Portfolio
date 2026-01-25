@@ -18,7 +18,7 @@ export default function Home() {
   const cvLink = "/assets/MADI_CHEIMA_CV.pdf";
 
   return (
-    <div className="min-h-screen bg-[#050505] text-white overflow-x-hidden selection:bg-cyan-500/30 selection:text-cyan-200">
+    <div className="min-h-screen bg-[#050505] text-white overflow-x-hidden selection:bg-orange-500/30 selection:text-orange-200">
       <Navbar />
       {/* Hero Section */}
       <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-32 pb-20">
@@ -44,7 +44,7 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="max-w-3xl flex-1 order-2 lg:order-1"
             >
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-sm font-black mb-8 text-cyan-400 tracking-[0.3em] uppercase shadow-2xl">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-sm font-black mb-8 text-orange-400 tracking-[0.3em] uppercase shadow-2xl">
                 <Rocket size={16} />
                 <span>Passionate Software Engineering Student</span>
               </div>
@@ -54,7 +54,7 @@ export default function Home() {
               </h1>
               
               <p className="text-xl md:text-3xl text-zinc-300 mb-12 leading-relaxed font-light max-w-2xl lg:mx-0 mx-auto">
-                Passionate about <span className="text-white font-bold italic underline decoration-cyan-400 decoration-4 underline-offset-8">coding and innovation</span>, I enjoy creating digital experiences that combine <span className="text-white">creativity</span> and <span className="text-white">logic</span>.
+                Passionate about <span className="text-white font-bold italic underline decoration-orange-400 decoration-4 underline-offset-8">coding and innovation</span>, I enjoy creating digital experiences that combine <span className="text-white">creativity</span> and <span className="text-white">logic</span>.
                 <br />
                 <span className="text-zinc-400 text-lg md:text-xl font-medium italic">Always learning, always improving.</span>
               </p>
@@ -62,10 +62,10 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start items-center">
                 <button 
                   onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="group relative px-12 py-5 bg-white text-black rounded-full font-black text-xl overflow-hidden transition-all hover:scale-110 active:scale-95 shadow-2xl shadow-cyan-500/20"
+                  className="group relative px-12 py-5 bg-white text-black rounded-full font-black text-xl overflow-hidden transition-all hover:scale-110 active:scale-95 shadow-2xl shadow-orange-500/20"
                 >
                   <span className="relative z-10">Explore My Work</span>
-                  <div className="absolute inset-0 bg-cyan-400 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
+                  <div className="absolute inset-0 bg-orange-400 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
                 </button>
                 <a 
                   href={cvLink}
@@ -208,17 +208,17 @@ export default function Home() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.05 }}
-                    className="p-10 bg-zinc-900/60 backdrop-blur-xl rounded-[32px] border border-white/5 hover:border-cyan-500/40 transition-all text-center group relative overflow-hidden shadow-2xl"
+                    className="p-10 bg-zinc-900/60 backdrop-blur-xl rounded-[32px] border border-white/5 hover:border-orange-500/40 transition-all text-center group relative overflow-hidden shadow-2xl"
                   >
-                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-cyan-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 to-amber-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     <div className="relative z-10">
-                      <div className="text-xl font-black text-white mb-6 uppercase tracking-widest transition-colors group-hover:text-cyan-400">{skill.name}</div>
+                      <div className="text-xl font-black text-white mb-6 uppercase tracking-widest transition-colors group-hover:text-orange-400">{skill.name}</div>
                       <div className="h-2.5 w-full bg-zinc-800 rounded-full overflow-hidden shadow-inner border border-white/5">
                         <motion.div 
                           initial={{ width: 0 }}
                           whileInView={{ width: `${skill.proficiency}%` }}
                           transition={{ duration: 1.5, ease: "easeOut" }}
-                          className="h-full bg-gradient-to-r from-purple-600 via-cyan-500 to-purple-600 bg-200% animate-gradient" 
+                          className="h-full bg-gradient-to-r from-orange-600 via-amber-500 to-orange-600 bg-200% animate-gradient" 
                         />
                       </div>
                       <div className="mt-4 text-[11px] font-black text-zinc-500 uppercase tracking-[0.3em] group-hover:text-white transition-colors">{skill.proficiency}% Expertise</div>
@@ -248,7 +248,7 @@ export default function Home() {
         </div>
       </Section>
       {/* Contact Section */}
-      <Section id="contact" title="Hire Me" subtitle="Let's build your next digital revolution together" className="pb-0">
+      <Section id="contact" title="Reach Out" subtitle="Let's build your next digital revolution together" className="pb-0">
         <div className="grid lg:grid-cols-3 gap-16 mb-20">
           <div className="lg:col-span-1 space-y-8">
             <div className="space-y-6">

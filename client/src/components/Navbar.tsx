@@ -80,9 +80,9 @@ export function Navbar() {
           
           <button
             onClick={() => scrollToSection("#contact")}
-            className="px-8 py-3 rounded-full bg-white text-black hover:bg-cyan-400 hover:scale-110 transition-all duration-500 font-black text-xs uppercase tracking-[0.2em] shadow-xl shadow-white/5"
+            className="px-8 py-3 rounded-full bg-white text-black hover:bg-orange-400 hover:scale-110 transition-all duration-500 font-black text-xs uppercase tracking-[0.2em] shadow-xl shadow-white/5"
           >
-            Hire Me
+            Reach Out
           </button>
         </div>
 
@@ -109,7 +109,7 @@ export function Navbar() {
                 <button
                   key={item.name}
                   onClick={() => scrollToSection(item.href)}
-                  className="text-4xl font-black text-white hover:text-cyan-400 transition-colors uppercase tracking-widest"
+                  className="text-4xl font-black text-white hover:text-orange-400 transition-colors uppercase tracking-widest"
                 >
                   {item.name}
                 </button>
@@ -117,9 +117,9 @@ export function Navbar() {
               <div className="w-24 h-1 bg-white/10 rounded-full" />
               <button
                 onClick={() => scrollToSection("#contact")}
-                className="w-full py-6 rounded-full bg-cyan-500 text-black font-black text-xl uppercase tracking-widest"
+                className="w-full py-6 rounded-full bg-orange-500 text-black font-black text-xl uppercase tracking-widest"
               >
-                Hire Me
+                Reach Out
               </button>
             </div>
           </motion.div>
