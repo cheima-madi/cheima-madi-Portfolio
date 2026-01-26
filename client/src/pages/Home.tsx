@@ -44,19 +44,19 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="max-w-3xl flex-1 order-2 lg:order-1"
             >
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-sm font-black mb-8 text-orange-400 tracking-[0.3em] uppercase shadow-2xl">
-                <Rocket size={16} />
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-[10px] font-black mb-6 text-orange-400 tracking-[0.2em] uppercase shadow-2xl">
+                <Rocket size={12} />
                 <span>Passionate Software Engineering Student</span>
               </div>
               
-              <h1 className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter mb-8 leading-[0.85] text-white drop-shadow-2xl">
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tighter mb-6 leading-[0.9] text-white drop-shadow-2xl">
                 I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-amber-400 to-orange-400 bg-300% animate-gradient">Madi Cheima</span>
               </h1>
               
-              <p className="text-xl md:text-3xl text-zinc-300 mb-12 leading-relaxed font-light max-w-2xl lg:mx-0 mx-auto">
+              <p className="text-lg md:text-xl text-zinc-300 mb-10 leading-relaxed font-light max-w-xl lg:mx-0 mx-auto">
                 Passionate about <span className="text-white font-bold italic underline decoration-orange-400 decoration-4 underline-offset-8">coding and innovation</span>, I enjoy creating digital experiences that combine <span className="text-white">creativity</span> and <span className="text-white">logic</span>.
                 <br />
-                <span className="text-zinc-400 text-lg md:text-xl font-medium italic">Always learning, always improving.</span>
+                <span className="text-zinc-400 text-base md:text-lg font-medium italic">Always learning, always improving.</span>
               </p>
               
               <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start items-center">
