@@ -55,10 +55,10 @@ export function Navbar() {
       <div className="container mx-auto px-6 max-w-7xl flex items-center justify-between">
         <Link 
           href="/" 
-          className="flex items-center gap-2 text-xl font-black tracking-tighter hover:scale-105 transition-transform group"
+          className="flex items-center gap-3 text-3xl font-black tracking-tighter hover:scale-105 transition-transform group"
         >
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-orange-600 to-amber-500 flex items-center justify-center text-white shadow-2xl shadow-orange-500/20 group-hover:rotate-12 transition-transform">
-            <Code2 size={18} />
+          <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-orange-600 to-amber-500 flex items-center justify-center text-white shadow-2xl shadow-orange-500/20 group-hover:rotate-12 transition-transform">
+            <Code2 size={28} />
           </div>
           <span className="text-white">cheima<span className="text-orange-400">.div</span></span>
         </Link>
@@ -80,7 +80,7 @@ export function Navbar() {
           
           <button
             onClick={() => scrollToSection("#contact")}
-            className="px-6 py-2 rounded-full bg-white text-black hover:bg-orange-400 hover:scale-110 transition-all duration-500 font-black text-[10px] uppercase tracking-[0.2em] shadow-xl shadow-white/5"
+            className="px-8 py-3 rounded-full bg-white text-black hover:bg-orange-400 hover:scale-110 transition-all duration-500 font-black text-xs uppercase tracking-[0.2em] shadow-xl shadow-white/5"
           >
             Reach Out
           </button>

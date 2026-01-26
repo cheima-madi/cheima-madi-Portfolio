@@ -114,7 +114,7 @@ export default function Home() {
                 />
               </div>
 
-              <div className="w-64 h-64 md:w-80 md:h-80 lg:w-[420px] lg:h-[420px] relative group z-10">
+              <div className="w-64 h-64 md:w-80 md:h-80 lg:w-[320px] lg:h-[320px] relative group z-10">
                 <div className="absolute inset-0 bg-gradient-to-tr from-orange-600/30 to-amber-500/30 rounded-full blur-[80px] opacity-40 group-hover:opacity-70 transition-opacity duration-700" />
                 
                 {/* Layered Rings */}
