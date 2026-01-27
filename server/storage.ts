@@ -91,26 +91,26 @@ export class DatabaseStorage implements IStorage {
       {
         degree: "License 3 – Software Engineering",
         institution: "University of Constantine 2 Abdelhamid Mehri",
-        period: "2024 – 2025",
-        description: "Currently focusing on Advanced Web Development, Concurrent Programming, and Software Quality Systems. Ranked top of cohort."
+        period: "2025 – 2026",
+        description: "Focusing on Software Architecture, Distributed Systems, and Advanced Engineering. Ranked top of cohort."
       },
       {
         degree: "License 2 – Computer Science",
         institution: "University of Constantine 2 Abdelhamid Mehri",
-        period: "2023 – 2024",
-        description: "Core modules in Algorithms, OOP, and Database Design."
+        period: "2024 – 2025",
+        description: "Specialized in Object-Oriented Design, Database Systems, and Algorithms."
       },
       {
         degree: "License 1 – New Technology",
         institution: "University of Constantine 2 Abdelhamid Mehri",
-        period: "2022 – 2023",
-        description: "Foundation in Computer Architecture, Mathematics, and Logic."
+        period: "2023 – 2024",
+        description: "Foundation in Programming Logic, Computer Systems, and Mathematics."
       },
       {
         degree: "Baccalaureate (Mathematics Specialty)",
         institution: "Constantine, Algeria",
-        period: "2022",
-        description: "Obtained with distinction."
+        period: "2023",
+        description: "Obtained with distinction in Mathematics."
       }
     ]);
 
