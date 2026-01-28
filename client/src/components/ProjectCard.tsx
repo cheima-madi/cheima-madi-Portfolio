@@ -67,10 +67,10 @@ export function ProjectCard({
       </div>
 
       {/* Content */}
-      <div className="p-10 pt-0 relative z-20 -mt-12">
-        <div className="bg-zinc-800/90 backdrop-blur-2xl border border-white/10 p-8 rounded-[32px] shadow-2xl group-hover:border-orange-500/20 transition-all">
-          <div className="flex justify-between items-start mb-4">
-             <h3 className="text-2xl font-black text-white group-hover:text-orange-400 transition-colors">
+      <div className="p-4 sm:p-6 md:p-10 pt-0 relative z-20 -mt-10 sm:-mt-12">
+        <div className="bg-zinc-800/90 backdrop-blur-2xl border border-white/10 p-6 sm:p-8 rounded-[24px] sm:rounded-[32px] shadow-2xl group-hover:border-orange-500/20 transition-all">
+          <div className="flex justify-between items-start mb-4 gap-2">
+             <h3 className="text-xl sm:text-2xl font-black text-white group-hover:text-orange-400 transition-colors">
               {title}
             </h3>
             {githubLink && (

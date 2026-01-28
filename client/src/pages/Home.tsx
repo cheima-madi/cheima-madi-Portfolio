@@ -59,10 +59,10 @@ export default function Home() {
                 <span className="text-zinc-400 text-base md:text-lg font-medium italic">Always learning, always improving.</span>
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start items-center">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center">
                 <button 
                   onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="group relative px-12 py-5 bg-white text-black rounded-full font-black text-xl overflow-hidden transition-all hover:scale-110 active:scale-95 shadow-2xl shadow-orange-500/20"
+                  className="group relative w-full sm:w-auto px-8 py-4 bg-white text-black rounded-full font-black text-lg overflow-hidden transition-all hover:scale-105 active:scale-95 shadow-2xl shadow-orange-500/20"
                 >
                   <span className="relative z-10">Explore My Work</span>
                   <div className="absolute inset-0 bg-orange-400 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
@@ -70,9 +70,9 @@ export default function Home() {
                 <a 
                   href={cvLink}
                   download
-                  className="px-12 py-5 bg-zinc-900 border-2 border-white/10 text-white rounded-full font-black text-xl hover:bg-zinc-800 hover:border-white/40 transition-all duration-300 flex items-center gap-3 group shadow-2xl"
+                  className="w-full sm:w-auto px-8 py-4 bg-zinc-900 border-2 border-white/10 text-white rounded-full font-black text-lg hover:bg-zinc-800 hover:border-white/40 transition-all duration-300 flex items-center justify-center gap-3 group shadow-2xl"
                 >
-                  <Download size={24} className="group-hover:translate-y-1 transition-transform duration-300" />
+                  <Download size={20} className="group-hover:translate-y-1 transition-transform duration-300" />
                   Get My CV
                 </a>
               </div>
@@ -201,14 +201,14 @@ export default function Home() {
                 {category.replace('_', ' ')}s
                 <div className="h-px flex-1 bg-gradient-to-l from-transparent to-white/10" />
               </h4>
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 sm:gap-6 md:gap-8">
                 {skills?.filter(s => s.category === category).map((skill, index) => (
                   <motion.div 
                     key={skill.id} 
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.05 }}
-                    className="p-10 bg-zinc-900/60 backdrop-blur-xl rounded-[32px] border border-white/5 hover:border-orange-500/40 transition-all text-center group relative overflow-hidden shadow-2xl"
+                    className="p-6 sm:p-8 md:p-10 bg-zinc-900/60 backdrop-blur-xl rounded-[24px] sm:rounded-[32px] border border-white/5 hover:border-orange-500/40 transition-all text-center group relative overflow-hidden shadow-2xl"
                   >
                     <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 to-amber-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     <div className="relative z-10">
