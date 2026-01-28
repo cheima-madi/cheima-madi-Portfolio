@@ -232,19 +232,72 @@ export default function Home() {
       </Section>
       {/* Projects Section */}
       <Section id="projects" title="Featured Projects" subtitle="A showcase of creativity, logic, and technical ability" className="bg-[#0a0a0a]">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-          {projects?.map((project, index) => (
-            <ProjectCard 
-              key={project.id}
-              index={index}
-              title={project.title}
-              description={project.description}
-              imageUrl={project.imageUrl}
-              techStack={project.techStack}
-              link={project.liveDemo as string | null}
-              githubLink={project.githubLink as string | null}
-            />
-          ))}
+        <div className="space-y-20">
+          {/* Category: E-Commerce & Retail */}
+          <div className="space-y-10">
+            <h3 className="text-sm font-black uppercase tracking-[0.4em] text-zinc-600 flex items-center gap-6">
+              <div className="h-px w-12 bg-orange-500/50" />
+              E-Commerce & Retail
+            </h3>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-16">
+              {projects?.filter(p => p.title.toLowerCase().includes('clothing') || p.title.toLowerCase().includes('luxe') || p.title.toLowerCase().includes('retail')).map((project, index) => (
+                <ProjectCard 
+                  key={project.id}
+                  index={index}
+                  title={project.title}
+                  description={project.description}
+                  imageUrl={project.imageUrl}
+                  techStack={project.techStack}
+                  link={project.liveDemo as string | null}
+                  githubLink={project.githubLink as string | null}
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* Category: Games & Interactive */}
+          <div className="space-y-10">
+            <h3 className="text-sm font-black uppercase tracking-[0.4em] text-zinc-600 flex items-center gap-6">
+              <div className="h-px w-12 bg-orange-500/50" />
+              Games & Interactive
+            </h3>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-16">
+              {projects?.filter(p => !p.title.toLowerCase().includes('clothing') && !p.title.toLowerCase().includes('luxe') && !p.title.toLowerCase().includes('retail') && (p.title.toLowerCase().includes('drift') || p.title.toLowerCase().includes('spin') || p.title.toLowerCase().includes('pet') || p.title.toLowerCase().includes('tic-tac') || p.title.toLowerCase().includes('find'))).map((project, index) => (
+                <ProjectCard 
+                  key={project.id}
+                  index={index}
+                  title={project.title}
+                  description={project.description}
+                  imageUrl={project.imageUrl}
+                  techStack={project.techStack}
+                  link={project.liveDemo as string | null}
+                  githubLink={project.githubLink as string | null}
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* Category: Tools & Productivity */}
+          <div className="space-y-10">
+            <h3 className="text-sm font-black uppercase tracking-[0.4em] text-zinc-600 flex items-center gap-6">
+              <div className="h-px w-12 bg-orange-500/50" />
+              Tools & Productivity
+            </h3>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-16">
+              {projects?.filter(p => !p.title.toLowerCase().includes('clothing') && !p.title.toLowerCase().includes('luxe') && !p.title.toLowerCase().includes('retail') && !p.title.toLowerCase().includes('drift') && !p.title.toLowerCase().includes('spin') && !p.title.toLowerCase().includes('pet') && !p.title.toLowerCase().includes('tic-tac') && !p.title.toLowerCase().includes('find')).map((project, index) => (
+                <ProjectCard 
+                  key={project.id}
+                  index={index}
+                  title={project.title}
+                  description={project.description}
+                  imageUrl={project.imageUrl}
+                  techStack={project.techStack}
+                  link={project.liveDemo as string | null}
+                  githubLink={project.githubLink as string | null}
+                />
+              ))}
+            </div>
+          </div>
         </div>
       </Section>
       {/* Contact Section */}
