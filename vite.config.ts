@@ -3,7 +3,7 @@ import react from "@vitejs/plugin-react";
 import path from "path";
 
 export default defineConfig({
-  base: "/cheima-madi-portfolio/",
+  base: "/cheima-madi-Portfolio/",
   plugins: [react()],
   resolve: {
     alias: {
