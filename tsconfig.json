@@ -1,8 +1,8 @@
+```json
 {
   "include": [
     "client/src/**/*",
-    "shared/**/*",
-    "server/**/*"
+    "shared/**/*"
   ],
   "exclude": [
     "node_modules",
