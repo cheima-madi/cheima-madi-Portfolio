@@ -4,7 +4,7 @@ I have already **initialized the repository and pushed your code** to GitHub for
 
 ### 1. Enable Automated Deployment
 To make your site appear online, follow these 3 clicks on GitHub:
-1. Go to your repository: [cheima-madi-Portfolio](https://github.com/cheima-madi/cheima-madi-Portfolio).
+1. Go to your repository: [cheima-madi-portfolio](https://github.com/cheima-madi/cheima-madi-portfolio).
 2. Click on **Settings** (top menu).
 3. On the left sidebar, click **Pages**.
 4. Under **Build and deployment** > **Source**, change the dropdown from "Deploy from a branch" to **GitHub Actions**.
@@ -15,11 +15,4 @@ To make your site appear online, follow these 3 clicks on GitHub:
 3. Once it finishes (turns green), your site will be live!
 
 ### 3. Your Live Link
-[https://cheima-madi.github.io/cheima-madi-Portfolio/](https://cheima-madi.github.io/cheima-madi-Portfolio/)
-
----
-
-### 📝 Project Details
-- **Email Contact Form**: Fully set up with your key (`52b7f6e3-...`). Messages will go straight to `cheima.madi@univ-constantine2.dz`.
-- **Pure Professionalism**: Every mention of "AI" has been removed. The site is 100% human-focused.
-- **Thematic Visuals**: All project images and links are functional and accurate.
+[https://cheima-madi.github.io/cheima-madi-portfolio/](https://cheima-madi.github.io/cheima-madi-portfolio/)
