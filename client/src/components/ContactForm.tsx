@@ -3,20 +3,20 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { insertContactMessageSchema, type InsertContactMessage } from "@shared/schema";
 import { useContact } from "@/hooks/use-portfolio";
 import { Loader2, Send } from "lucide-react";
-import { 
-  Form, 
-  FormControl, 
-  FormField, 
-  FormItem, 
-  FormLabel, 
-  FormMessage 
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 
 export function ContactForm() {
   const { mutate, isPending } = useContact();
-  
+
   const form = useForm<InsertContactMessage>({
     resolver: zodResolver(insertContactMessageSchema),
     defaultValues: {
@@ -26,10 +26,32 @@ export function ContactForm() {
     }
   });
 
-  function onSubmit(data: InsertContactMessage) {
-    mutate(data, {
-      onSuccess: () => form.reset()
-    });
+  async function onSubmit(data: InsertContactMessage) {
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: JSON.stringify({
+          access_key: "52b7f6e3-4a0e-4306-ae8a-7b3882a3f1ed",
+          name: data.name,
+          email: data.email,
+          message: data.message,
+          subject: `New Portfolio Inquiry from ${data.name}`
+        })
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        form.reset();
+        // Trigger the local useContact success handling if needed, or just show a success message
+        mutate(data);
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+    }
   }
 
   return (
@@ -44,17 +66,17 @@ export function ContactForm() {
                 <FormItem>
                   <FormLabel className="text-zinc-400 uppercase tracking-widest text-[10px] font-black">Full Name</FormLabel>
                   <FormControl>
-                    <Input 
-                      placeholder="Enter your name" 
-                      className="bg-black/20 border-white/5 h-12 rounded-xl focus:border-orange-500/50 transition-all" 
-                      {...field} 
+                    <Input
+                      placeholder="Enter your name"
+                      className="bg-black/20 border-white/5 h-12 rounded-xl focus:border-red-500/50 transition-all"
+                      {...field}
                     />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
               )}
             />
-            
+
             <FormField
               control={form.control}
               name="email"
@@ -62,11 +84,11 @@ export function ContactForm() {
                 <FormItem>
                   <FormLabel className="text-zinc-400 uppercase tracking-widest text-[10px] font-black">Email Address</FormLabel>
                   <FormControl>
-                    <Input 
-                      placeholder="email@example.com" 
+                    <Input
+                      placeholder="email@example.com"
                       type="email"
-                      className="bg-black/20 border-white/5 h-12 rounded-xl focus:border-orange-500/50 transition-all" 
-                      {...field} 
+                      className="bg-black/20 border-white/5 h-12 rounded-xl focus:border-red-500/50 transition-all"
+                      {...field}
                     />
                   </FormControl>
                   <FormMessage />
@@ -82,10 +104,10 @@ export function ContactForm() {
               <FormItem>
                 <FormLabel className="text-zinc-400 uppercase tracking-widest text-[10px] font-black">Professional Inquiry</FormLabel>
                 <FormControl>
-                  <Textarea 
-                    placeholder="How can I assist your organization's technical needs?" 
-                    className="bg-black/20 border-white/5 min-h-[160px] rounded-2xl resize-none focus:border-orange-500/50 transition-all" 
-                    {...field} 
+                  <Textarea
+                    placeholder="How can I assist your organization's technical needs?"
+                    className="bg-black/20 border-white/5 min-h-[160px] rounded-2xl resize-none focus:border-red-500/50 transition-all"
+                    {...field}
                   />
                 </FormControl>
                 <FormMessage />
@@ -96,7 +118,7 @@ export function ContactForm() {
           <button
             type="submit"
             disabled={isPending}
-            className="w-full h-14 rounded-xl bg-gradient-to-r from-primary to-amber-600 text-white font-bold text-lg hover:shadow-lg hover:shadow-primary/25 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+            className="w-full h-14 rounded-xl bg-gradient-to-r from-primary to-red-800 text-white font-bold text-lg hover:shadow-lg hover:shadow-primary/25 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
           >
             {isPending ? (
               <>

@@ -55,7 +55,7 @@ export class DatabaseStorage implements IStorage {
       { name: "SQL", category: "language", proficiency: 90 },
       { name: "C#", category: "language", proficiency: 75 },
       { name: "TypeScript", category: "language", proficiency: 85 },
-      
+
       // Core CS & Logic
       { name: "Algorithms", category: "software_engineering", proficiency: 95 },
       { name: "Data Structures", category: "software_engineering", proficiency: 95 },
@@ -64,7 +64,7 @@ export class DatabaseStorage implements IStorage {
       { name: "Mathematical Logic", category: "software_engineering", proficiency: 90 },
       { name: "System Design", category: "software_engineering", proficiency: 85 },
       { name: "Design Patterns", category: "software_engineering", proficiency: 88 },
-      
+
       // Web & Frontend
       { name: "React", category: "web", proficiency: 90 },
       { name: "Spring Boot", category: "web", proficiency: 85 },
@@ -74,7 +74,7 @@ export class DatabaseStorage implements IStorage {
       { name: "Express.js", category: "web", proficiency: 88 },
       { name: "RESTful APIs", category: "web", proficiency: 92 },
       { name: "Responsive Design", category: "web", proficiency: 95 },
-      
+
       // Engineering & Tools
       { name: "Git & GitHub", category: "tool", proficiency: 95 },
       { name: "PostgreSQL", category: "tool", proficiency: 90 },
@@ -125,144 +125,104 @@ export class DatabaseStorage implements IStorage {
 
     await db.insert(projects).values([
       {
-        title: "E-Commerce Clothing Store",
-        description: "Fully functional online platform with catalog, cart, and checkout. Built using React and Spring Boot.",
-        imageUrl: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80",
-        techStack: ["React", "Spring Boot", "MySQL", "UI/UX"],
-        link: "#",
-        githubLink: "#",
-        type: "project",
-        liveDemo: "#"
-      },
-      {
         title: "Aura Luxe – Premium Beauty & Skincare",
         description: "Luxury e-commerce experience for high-end skincare products with elegant visual design.",
-        imageUrl: "/attached_assets/aura-luxe.png",
+        imageUrl: "https://images.unsplash.com/photo-1556228720-195a672e8a03?q=80&w=1200&auto=format&fit=crop",
         techStack: ["React", "Tailwind CSS", "Framer Motion"],
-        link: "#",
-        githubLink: "#",
+        link: "https://cheima-madi.github.io/aura-luxe-beauty-andskincare/",
+        githubLink: "https://github.com/cheima-madi/aura-luxe-beauty-andskincare",
         type: "project",
-        liveDemo: "#"
-      },
-      {
-        title: "Neon Drift Pro",
-        description: "High-octane synthwave racing game featuring futuristic neon aesthetics and smooth mechanics.",
-        imageUrl: "/attached_assets/neon-drift-pro.png",
-        techStack: ["JavaScript", "HTML5 Canvas", "Game Design"],
-        link: "#",
-        githubLink: "#",
-        type: "project",
-        liveDemo: "#"
+        liveDemo: "https://cheima-madi.github.io/aura-luxe-beauty-andskincare/"
       },
       {
         title: "Lumina Gradient Studio",
         description: "A professional tool for designers to create and export stunning CSS gradients effortlessly.",
-        imageUrl: "/attached_assets/lumina-gradient-studio.png",
+        imageUrl: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1200&auto=format&fit=crop",
         techStack: ["TypeScript", "React", "CSS Engine"],
-        link: "#",
-        githubLink: "#",
+        link: "https://cheima-madi.github.io/lumina-gradient-studio/",
+        githubLink: "https://github.com/cheima-madi/lumina-gradient-studio",
         type: "project",
-        liveDemo: "#"
-      },
-      {
-        title: "Lucky Spin Wheel Pro",
-        description: "Interactive engagement tool with high-quality 3D animations and particle effects.",
-        imageUrl: "/attached_assets/lucky-spin-wheel-pro.png",
-        techStack: ["JavaScript", "CSS3 Animations", "UI/UX"],
-        link: "#",
-        githubLink: "#",
-        type: "project",
-        liveDemo: "#"
+        liveDemo: "https://cheima-madi.github.io/lumina-gradient-studio/"
       },
       {
         title: "Evopet – Idle Evolution",
         description: "Charming idle game where players evolve unique digital creatures through multiple stages.",
-        imageUrl: "/attached_assets/evopet-idle-evolution.png",
+        imageUrl: "https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?q=80&w=1200&auto=format&fit=crop",
         techStack: ["React", "Game Logic", "State Management"],
-        link: "#",
-        githubLink: "#",
+        link: "https://cheima-madi.github.io/evopet-idle-evolution/",
+        githubLink: "https://github.com/cheima-madi/evopet-idle-evolution",
         type: "project",
-        liveDemo: "#"
+        liveDemo: "https://cheima-madi.github.io/evopet-idle-evolution/"
       },
       {
         title: "Purr-fect Moods",
         description: "Adorable mood tracking application with cat-themed illustrations and personalized insights.",
-        imageUrl: "/attached_assets/purr-fect-moods.png",
+        imageUrl: "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=1200&auto=format&fit=crop",
         techStack: ["React Native", "Firebase", "Illustration"],
-        link: "#",
-        githubLink: "#",
+        link: "https://cheima-madi.github.io/purr-fect-moods/",
+        githubLink: "https://github.com/cheima-madi/purr-fect-moods",
         type: "project",
-        liveDemo: "#"
+        liveDemo: "https://cheima-madi.github.io/purr-fect-moods/"
       },
       {
         title: "Cozy Habit Garden",
         description: "Productivity meets relaxation in this habit tracker where habits grow your virtual garden.",
-        imageUrl: "/attached_assets/cozy-habit-garden.png",
+        imageUrl: "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?q=80&w=1200&auto=format&fit=crop",
         techStack: ["React", "D3.js", "Local Storage"],
-        link: "#",
-        githubLink: "#",
+        link: "https://cheima-madi.github.io/Cozy-Habit-Garden/",
+        githubLink: "https://github.com/cheima-madi/Cozy-Habit-Garden",
         type: "project",
-        liveDemo: "#"
-      },
-      {
-        title: "Skycast Mini",
-        description: "Sleek and lightweight weather application providing real-time updates with a minimalist UI.",
-        imageUrl: "/attached_assets/skycast-mini.png",
-        techStack: ["Weather API", "JavaScript", "Responsive Design"],
-        link: "#",
-        githubLink: "#",
-        type: "project",
-        liveDemo: "#"
+        liveDemo: "https://cheima-madi.github.io/Cozy-Habit-Garden/"
       },
       {
         title: "SuccessCorner Management System",
         description: "Comprehensive enterprise-grade management dashboard for business operations and analytics.",
-        imageUrl: "/attached_assets/successcorner.png",
+        imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop",
         techStack: ["PostgreSQL", "Express", "React", "Node.js"],
-        link: "#",
-        githubLink: "#",
+        link: "https://cheima-madi.github.io/successcorner-management-system/",
+        githubLink: "https://github.com/cheima-madi/successcorner-management-system",
         type: "project",
-        liveDemo: "#"
+        liveDemo: "https://cheima-madi.github.io/successcorner-management-system/"
       },
       {
         title: "Neon Mind Tic-Tac-Toe",
         description: "A futuristic take on the classic game with glowing neon visuals and smart AI opponents.",
-        imageUrl: "/attached_assets/neon-mind-tic-tac-toe.png",
+        imageUrl: "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1200&auto=format&fit=crop",
         techStack: ["JavaScript", "Animations", "AI Logic"],
-        link: "#",
-        githubLink: "#",
+        link: "https://cheima-madi.github.io/neon-mind-tic-tac-toe/",
+        githubLink: "https://github.com/cheima-madi/neon-mind-tic-tac-toe",
         type: "project",
-        liveDemo: "#"
+        liveDemo: "https://cheima-madi.github.io/neon-mind-tic-tac-toe/"
       },
       {
         title: "FocusFlow Pomodoro Pro",
         description: "Enhanced productivity timer designed for deep work sessions with customizable flows.",
-        imageUrl: "/attached_assets/focusflow-pomodoro.png",
+        imageUrl: "https://images.unsplash.com/photo-1493934558415-9ca19e0b39fa?q=80&w=1200&auto=format&fit=crop",
         techStack: ["TypeScript", "Audio API", "Productivity Tech"],
-        link: "#",
-        githubLink: "#",
+        link: "https://cheima-madi.github.io/focusflow-pomodoro-pro/",
+        githubLink: "https://github.com/cheima-madi/focusflow-pomodoro-pro",
         type: "project",
-        liveDemo: "#"
+        liveDemo: "https://cheima-madi.github.io/focusflow-pomodoro-pro/"
       },
       {
         title: "Flip & Find",
         description: "Polished memory matching game with vibrant themes and progressive difficulty levels.",
-        imageUrl: "/attached_assets/flip-find.png",
+        imageUrl: "https://images.unsplash.com/photo-1606167668584-78701c57f13d?q=80&w=1200&auto=format&fit=crop",
         techStack: ["JavaScript", "Game Logic", "CSS Grid"],
-        link: "#",
-        githubLink: "#",
+        link: "https://cheima-madi.github.io/flip-find-/",
+        githubLink: "https://github.com/cheima-madi/flip-find-",
         type: "project",
-        liveDemo: "#"
+        liveDemo: "https://cheima-madi.github.io/flip-find-/"
       },
       {
         title: "AR Smart Retail – Visionary Furniture",
         description: "Augmented Reality application allowing users to visualize furniture in their space before buying.",
-        imageUrl: "/attached_assets/ar-smart-retail.png",
+        imageUrl: "https://images.unsplash.com/photo-1590608897129-79da98d15969?q=80&w=1200&auto=format&fit=crop",
         techStack: ["AR.js", "Three.js", "Mobile Web"],
-        link: "#",
-        githubLink: "#",
+        link: "https://cheima-madi.github.io/visionary-furniture/",
+        githubLink: "https://github.com/cheima-madi/visionary-furniture",
         type: "project",
-        liveDemo: "#"
+        liveDemo: "https://cheima-madi.github.io/visionary-furniture/"
       }
     ]);
   }

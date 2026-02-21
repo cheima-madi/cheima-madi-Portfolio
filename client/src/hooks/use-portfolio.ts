@@ -3,53 +3,27 @@ import { api } from "@shared/routes";
 import { useToast } from "@/hooks/use-toast";
 import { type InsertContactMessage } from "@shared/schema";
 
+import { portfolioData } from "@/data/portfolio";
+
 export function useSkills() {
-  return useQuery({
-    queryKey: [api.skills.list.path],
-    queryFn: async () => {
-      const res = await fetch(api.skills.list.path);
-      if (!res.ok) throw new Error("Failed to fetch skills");
-      return api.skills.list.responses[200].parse(await res.json());
-    },
-  });
+  return { data: portfolioData.skills, isLoading: false };
 }
 
 export function useProjects() {
-  return useQuery({
-    queryKey: [api.projects.list.path],
-    queryFn: async () => {
-      const res = await fetch(api.projects.list.path);
-      if (!res.ok) throw new Error("Failed to fetch projects");
-      return api.projects.list.responses[200].parse(await res.json());
-    },
-  });
+  return { data: portfolioData.projects, isLoading: false };
 }
 
 export function useEducation() {
-  return useQuery({
-    queryKey: [api.education.list.path],
-    queryFn: async () => {
-      const res = await fetch(api.education.list.path);
-      if (!res.ok) throw new Error("Failed to fetch education");
-      return api.education.list.responses[200].parse(await res.json());
-    },
-  });
+  return { data: portfolioData.education, isLoading: false };
 }
 
 export function useExperience() {
-  return useQuery({
-    queryKey: [api.experience.list.path],
-    queryFn: async () => {
-      const res = await fetch(api.experience.list.path);
-      if (!res.ok) throw new Error("Failed to fetch experience");
-      return api.experience.list.responses[200].parse(await res.json());
-    },
-  });
+  return { data: portfolioData.experience, isLoading: false };
 }
 
 export function useContact() {
   const { toast } = useToast();
-  
+
   return useMutation({
     mutationFn: async (data: InsertContactMessage) => {
       const validated = api.contact.create.input.parse(data);
@@ -58,7 +32,7 @@ export function useContact() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(validated),
       });
-      
+
       if (!res.ok) {
         if (res.status === 400) {
           const error = await res.json();
@@ -66,7 +40,7 @@ export function useContact() {
         }
         throw new Error("Failed to send message");
       }
-      
+
       return api.contact.create.responses[201].parse(await res.json());
     },
     onSuccess: () => {

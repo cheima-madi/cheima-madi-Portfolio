@@ -11,51 +11,51 @@ interface ProjectCardProps {
   index: number;
 }
 
-export function ProjectCard({ 
-  title, 
-  description, 
-  imageUrl, 
-  techStack, 
-  link, 
+export function ProjectCard({
+  title,
+  description,
+  imageUrl,
+  techStack,
+  link,
   githubLink,
-  index 
+  index
 }: ProjectCardProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.1 }}
-      className="group relative bg-zinc-900 rounded-[40px] overflow-hidden border border-white/5 hover:border-orange-500/30 transition-all duration-700 shadow-2xl"
+      className="group relative bg-zinc-900 rounded-[40px] overflow-hidden border border-white/5 hover:border-red-600/30 transition-all duration-700 shadow-2xl"
     >
       {/* Image Container */}
       <div className="aspect-[16/10] overflow-hidden relative">
         <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 via-zinc-900/10 to-transparent z-10" />
-        <img 
-          src={imageUrl} 
+        <img
+          src={imageUrl}
           alt={title}
-          className="w-full h-full object-cover grayscale-[0.3] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000 ease-in-out" 
+          className="w-full h-full object-cover grayscale-[0.3] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000 ease-in-out"
           onError={(e) => {
             e.currentTarget.src = "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1000&auto=format&fit=crop";
           }}
         />
-        
+
         {/* Action Buttons */}
         <div className="absolute inset-0 z-20 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
           {link && (
-            <a 
-              href={link} 
-              target="_blank" 
+            <a
+              href={link}
+              target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3 bg-orange-500 text-black rounded-full font-black text-sm shadow-2xl shadow-orange-500/40 hover:scale-110 active:scale-95 transition-all flex items-center gap-2"
+              className="px-6 py-3 bg-red-600 text-white rounded-full font-black text-sm shadow-2xl shadow-red-600/40 hover:scale-110 active:scale-95 transition-all flex items-center gap-2"
             >
               Live Demo
               <ExternalLink size={16} />
             </a>
           )}
           {githubLink && (
-            <a 
-              href={githubLink} 
-              target="_blank" 
+            <a
+              href={githubLink}
+              target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-3 bg-white/10 backdrop-blur-md text-white border border-white/20 rounded-full font-black text-sm hover:bg-white hover:text-black transition-all flex items-center gap-2"
             >
@@ -68,15 +68,15 @@ export function ProjectCard({
 
       {/* Content */}
       <div className="p-4 sm:p-6 md:p-10 pt-0 relative z-20 -mt-10 sm:-mt-12">
-        <div className="bg-zinc-800/90 backdrop-blur-2xl border border-white/10 p-6 sm:p-8 rounded-[24px] sm:rounded-[32px] shadow-2xl group-hover:border-orange-500/20 transition-all">
+        <div className="bg-zinc-800/90 backdrop-blur-2xl border border-white/10 p-6 sm:p-8 rounded-[24px] sm:rounded-[32px] shadow-2xl group-hover:border-red-600/20 transition-all">
           <div className="flex justify-between items-start mb-4 gap-2">
-             <h3 className="text-xl sm:text-2xl font-black text-white group-hover:text-orange-400 transition-colors">
+            <h3 className="text-xl sm:text-2xl font-black text-white group-hover:text-red-500 transition-colors">
               {title}
             </h3>
             {githubLink && (
-              <a 
-                href={githubLink} 
-                target="_blank" 
+              <a
+                href={githubLink}
+                target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-zinc-400 hover:bg-white hover:text-black transition-all"
               >
@@ -84,16 +84,16 @@ export function ProjectCard({
               </a>
             )}
           </div>
-          
+
           <p className="text-zinc-400 mb-8 font-medium leading-relaxed">
             {description}
           </p>
-          
+
           <div className="flex flex-wrap gap-2">
             {techStack.map((tech) => (
-              <span 
-                key={tech} 
-                className="text-[10px] font-black uppercase tracking-widest px-4 py-1.5 bg-black/30 text-orange-400 rounded-full border border-orange-500/20"
+              <span
+                key={tech}
+                className="text-[10px] font-black uppercase tracking-widest px-4 py-1.5 bg-black/30 text-red-500 rounded-full border border-red-600/20"
               >
                 {tech}
               </span>
